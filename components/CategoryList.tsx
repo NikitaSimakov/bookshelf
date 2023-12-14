@@ -38,8 +38,6 @@ const CategoryList = () => {
   };
   useEffect(() => {
     getCategories();
-  }, [getCategories]);
-  useEffect(() => {
     getTopBooks();
   }, []);
   useEffect(() => {
@@ -47,12 +45,15 @@ const CategoryList = () => {
   }, [category]);
   return (
     <>
-      <ul onClick={getCategory}>
-        <li>All categories</li>
-        {categories.map(({ list_name }) => (
-          <li key={list_name}>{list_name}</li>
-        ))}
-      </ul>
+      {loading && <p>loading..</p>}
+      <div>
+        <ul onClick={getCategory}>
+          <li>All categories</li>
+          {categories.map(({ list_name }) => (
+            <li key={list_name}>{list_name}</li>
+          ))}
+        </ul>
+      </div>
       {category ? <Books /> : <TopBooks />}
     </>
   );

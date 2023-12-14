@@ -1,15 +1,16 @@
+import { createWithEqualityFn } from "zustand/traditional";
 import {
   getBooksByCategory,
   getCategories,
   getTopBooks,
 } from "@/services/getBooks";
-import { createWithEqualityFn } from "zustand/traditional";
+import { IBook, ICard, IListName } from "@/types/types";
 
 interface UseBooks {
-  categories: { list_name: string }[];
+  categories: IListName[];
   category: null | string;
-  topBooks: any[];
-  booksByCategory: any[];
+  topBooks: IBook[];
+  booksByCategory: ICard[];
   loading: boolean;
   error: null | string;
   getCategories: () => Promise<void>;

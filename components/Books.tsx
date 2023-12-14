@@ -1,4 +1,6 @@
 import { useBooks } from "@/store/store";
+import { ICard } from "@/types/types";
+import Card from "./Card";
 
 const Books = () => {
   const [loading, category, books] = useBooks((state) => [
@@ -7,22 +9,20 @@ const Books = () => {
     state.booksByCategory,
   ]);
 
+  const bookCardMarkup = books?.map(
+    ({ _id, title, author, book_image }: ICard) => (
+      <Card key={_id} cardsInfo={{ _id, author, title, book_image }} />
+    )
+  );
+
   return (
     <>
       {loading && <p>Loading..</p>}
       {!loading && (
-        <div>
+        <section>
           <h2>{category}</h2>
-          <ul>
-            {books?.map(({ _id, title, author, book_image }: any) => (
-              <li key={_id}>
-                <img src={book_image} alt={title} />
-                <h3>{title}</h3>
-                <p>{author}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
+          <ul>{bookCardMarkup}</ul>
+        </section>
       )}
     </>
   );

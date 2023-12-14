@@ -1,29 +1,25 @@
 import { useBooks } from "@/store/store";
+import { ICard } from "@/types/types";
+import Card from "./Card";
 
 const TopBooks = () => {
   const topBooks = useBooks((state) => state.topBooks);
-  const markup = topBooks.map(({ list_name, books }) => {
-    const booksCardMarkup = books?.map(
-      ({ _id, author, title, book_image }: any) => (
-        <li key={_id}>
-          <img src={book_image} alt={title} />
-          <h3>{title}</h3>
-          <p>{author}</p>
-        </li>
-      )
-    );
+  const bookCardMarkup = topBooks.map(({ list_name, books }) => {
+    const markup = books?.map(({ _id, author, title, book_image }: ICard) => (
+      <Card key={_id} cardsInfo={{ _id, author, title, book_image }} />
+    ));
     return (
-      <>
+      <div key={list_name}>
         <h2 style={{ color: "red" }}>{list_name}</h2>
-        {booksCardMarkup}
-      </>
+        {markup}
+      </div>
     );
   });
   return (
-    <>
+    <section>
       <h2>Best Sellers Books</h2>
-      <ul>{markup}</ul>
-    </>
+      <ul>{bookCardMarkup}</ul>
+    </section>
   );
 };
 
