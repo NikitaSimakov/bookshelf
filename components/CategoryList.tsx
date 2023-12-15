@@ -29,12 +29,12 @@ const CategoryList = () => {
     ],
     shallow
   );
-  const getCategory = (
-    event: MouseEvent<HTMLUListElement, globalThis.MouseEvent>
-  ) => {
-    const target = event.target as HTMLElement;
-    if (target.textContent) setCategory(target.textContent);
-    if (target.textContent === "All categories") setCategory("");
+  const getCategory = ({
+    target,
+  }: MouseEvent<HTMLUListElement, globalThis.MouseEvent>) => {
+    const { textContent } = target as HTMLElement;
+    if (textContent) setCategory(textContent);
+    if (textContent === "All categories") setCategory("");
   };
   useEffect(() => {
     getCategories();
