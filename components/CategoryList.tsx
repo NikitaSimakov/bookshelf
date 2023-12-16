@@ -1,10 +1,10 @@
 "use client";
 
 import { MouseEvent, useEffect } from "react";
-import Books from "./Books";
 import { useBooks } from "@/store/store";
 import { shallow } from "zustand/shallow";
 import TopBooks from "./TopBooks";
+import Books from "./Books";
 
 const CategoryList = () => {
   const [
@@ -54,7 +54,7 @@ const CategoryList = () => {
           ))}
         </ul>
       </div>
-      {category ? <Books /> : <TopBooks />}
+      {/* {category ? <Books /> : <TopBooks />} */}
     </>
   );
 };
