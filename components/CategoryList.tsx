@@ -39,10 +39,10 @@ const CategoryList = () => {
   useEffect(() => {
     getCategories();
     getTopBooks();
-  }, []);
+  }, [getCategories, getTopBooks]);
   useEffect(() => {
     if (category) getBooksByCategory(category);
-  }, [category]);
+  }, [category, getBooksByCategory]);
   return (
     <>
       {loading && <p>loading..</p>}

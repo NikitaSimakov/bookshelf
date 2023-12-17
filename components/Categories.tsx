@@ -6,23 +6,11 @@ import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
 
 const Categories = () => {
-  const [
-    loading,
-    setCategory,
-    category,
-    categories,
-    getCategories,
-    getBooksByCategory,
-    getTopBooks,
-    topBooks,
-  ] = useBooks(
+  const [loading, categories, getCategories, getTopBooks, topBooks] = useBooks(
     (state) => [
       state.loading,
-      state.setCategory,
-      state.category,
       state.categories,
       state.getCategories,
-      state.getBooksByCategory,
       state.getTopBooks,
       state.topBooks,
     ],
@@ -31,10 +19,12 @@ const Categories = () => {
   useEffect(() => {
     getCategories();
     getTopBooks();
-  }, []);
+  }, [getCategories, getTopBooks]);
   return (
     <ul>
-      <li>All categories</li>
+      <li>
+        <Link href={"/books"}>All categories</Link>
+      </li>
       {categories.map(({ list_name }) => (
         <li key={list_name}>
           <Link href={`/books/${list_name}`}>{list_name}</Link>

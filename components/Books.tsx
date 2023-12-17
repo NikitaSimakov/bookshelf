@@ -1,3 +1,4 @@
+"use client";
 import { useBooks } from "@/store/store";
 import { ICard } from "@/types/types";
 import Card from "./Card";

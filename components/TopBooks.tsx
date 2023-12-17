@@ -1,18 +1,25 @@
+"use client";
 import { useBooks } from "@/store/store";
 import { ICard } from "@/types/types";
 import Card from "./Card";
+import { shallow } from "zustand/shallow";
 
 const TopBooks = () => {
-  const topBooks = useBooks((state) => state.topBooks);
+  const [getTopBooks, topBooks] = useBooks(
+    (state) => [state.getTopBooks, state.topBooks],
+    shallow
+  );
   const bookCardMarkup = topBooks.map(({ list_name, books }) => {
     const markup = books?.map(({ _id, author, title, book_image }: ICard) => (
       <Card key={_id} cardsInfo={{ _id, author, title, book_image }} />
     ));
     return (
-      <div key={list_name}>
+      <li key={list_name}>
         <h2 style={{ color: "red" }}>{list_name}</h2>
-        {markup}
-      </div>
+        <ul style={{ display: "flex", flexWrap: "wrap", gap: "15px" }}>
+          {markup}
+        </ul>
+      </li>
     );
   });
   return (
