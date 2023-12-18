@@ -1,25 +1,10 @@
-"use client";
-
-import { useBooks } from "@/store/store";
+import { getCategories } from "@/services/getBooks";
+import { IListName } from "@/types/types";
 import Link from "next/link";
-import { useEffect } from "react";
-import { shallow } from "zustand/shallow";
 
-const Categories = () => {
-  const [loading, categories, getCategories, getTopBooks, topBooks] = useBooks(
-    (state) => [
-      state.loading,
-      state.categories,
-      state.getCategories,
-      state.getTopBooks,
-      state.topBooks,
-    ],
-    shallow
-  );
-  useEffect(() => {
-    getCategories();
-    getTopBooks();
-  }, [getCategories, getTopBooks]);
+const Categories = async () => {
+  const categories: IListName[] = await getCategories();
+
   return (
     <ul>
       <li>
