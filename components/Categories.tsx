@@ -8,7 +8,7 @@ const Categories = async () => {
   return (
     <ul>
       <li>
-        <Link href={"/books"}>All categories</Link>
+        <Link href={"/books/all"}>All categories</Link>
       </li>
       {categories.map(({ list_name }) => (
         <li key={list_name}>

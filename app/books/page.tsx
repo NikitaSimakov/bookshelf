@@ -1,12 +1,16 @@
 import { IBook, ICard } from "@/types/types";
 import { getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
+import Modal from "@/components/Modal";
 
 const Books = async () => {
   const topBooks: IBook[] = await getTopBooks();
   const bookCardMarkup = topBooks.map(({ list_name, books }) => {
     const markup = books?.map(({ _id, author, title, book_image }: ICard) => (
-      <Card key={_id} cardsInfo={{ _id, author, title, book_image }} />
+      <Card
+        key={_id}
+        cardsInfo={{ _id, author, title, book_image, category: "all" }}
+      />
     ));
     return (
       <li key={list_name}>
@@ -19,6 +23,7 @@ const Books = async () => {
   });
   return (
     <section>
+      <Modal />
       <h2>Best Sellers Books</h2>
       <ul>{bookCardMarkup}</ul>
     </section>

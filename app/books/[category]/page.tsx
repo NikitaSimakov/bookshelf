@@ -1,4 +1,5 @@
 import Card from "@/components/Card";
+import CardInfo from "@/components/CardInfo";
 import Modal from "@/components/Modal";
 import { getBooksByCategory } from "@/services/getBooks";
 import { ICard } from "@/types/types";
@@ -21,7 +22,6 @@ export async function generateStaticParams() {
 export const revalidate = 60;
 
 const Category = async ({ params: { category } }: ICategory) => {
-  console.log(category);
   category = category;
 
   const books = await getBooksByCategory(category);

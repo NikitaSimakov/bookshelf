@@ -15,7 +15,7 @@ export const Card = ({
       <h3>{title}</h3>
       <p>{author}</p>
       <div style={{ border: "1px" }}>
-        <Link href={`/books/${category}?modal=${_id}`} scroll={false}>
+        <Link href={`/books/${category}?modal=${_id}`} replace scroll={false}>
           Quick view
         </Link>
         {/* <Link href={`${category}?modal=${_id}`}>Quick view</Link> */}

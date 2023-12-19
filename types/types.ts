@@ -3,7 +3,7 @@ export interface ICard {
   book_image: string;
   title: string;
   author: string;
-  category?: string;
+  category: string;
 }
 
 export interface IBook {
