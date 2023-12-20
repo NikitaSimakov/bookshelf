@@ -20,22 +20,6 @@ const Modal = () =>
     const searchParams = useSearchParams();
     const id = searchParams.get("modal");
     const path = usePathname();
-    // const dialogRef = useRef<null | HTMLDialogElement>(null);
-    // useEffect(() => {
-    //   if (id) {
-    //     dialogRef.current?.showModal();
-    //   } else {
-    //     dialogRef.current?.close();
-    //   }
-    // }, [id]);
-
-    // const bookById = id && getBookById(id);
-    // const books = () => {
-    //   if (id) {
-    //     return (bookById = getBookById(id).then((res) => res));
-    //   }
-    // };
-
     const dialog: JSX.Element | null = id ? (
       <div className={style.overlay}>
         <dialog
@@ -52,7 +36,7 @@ const Modal = () =>
             </Link>
           </button>
           <h1>This is modal window {id}</h1>
-          <CardInfo id={id} />
+          <CardInfo />
           {/* {children} */}
         </dialog>
       </div>
