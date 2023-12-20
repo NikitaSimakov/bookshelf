@@ -2,8 +2,9 @@
 import Link from "next/link";
 import style from "./modal.module.scss";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import CardInfo from "./CardInfo";
+import { getBookById } from "@/services/getBooks";
 
 interface IModal {
   children: React.ReactNode;
@@ -28,6 +29,13 @@ const Modal = () =>
     //   }
     // }, [id]);
 
+    // const bookById = id && getBookById(id);
+    // const books = () => {
+    //   if (id) {
+    //     return (bookById = getBookById(id).then((res) => res));
+    //   }
+    // };
+
     const dialog: JSX.Element | null = id ? (
       <div className={style.overlay}>
         <dialog
@@ -45,6 +53,7 @@ const Modal = () =>
           </button>
           <h1>This is modal window {id}</h1>
           <CardInfo id={id} />
+          {/* {children} */}
         </dialog>
       </div>
     ) : null;

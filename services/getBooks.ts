@@ -24,7 +24,8 @@ export const getBooksByCategory = async (category: string) => {
 
 export const getBookById = async (id: string) => {
   const response = await fetch(
-    `https://books-backend.p.goit.global/books/${id}`
+    `https://books-backend.p.goit.global/books/${id}`,
+    { cache: "force-cache" }
   );
   return response.json();
 };

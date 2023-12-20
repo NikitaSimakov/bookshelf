@@ -1,5 +1,6 @@
 import Card from "@/components/Card";
 import CardInfo from "@/components/CardInfo";
+// import CardInfo from "@/components/CardInfo";
 import Modal from "@/components/Modal";
 import { getBooksByCategory } from "@/services/getBooks";
 import { ICard } from "@/types/types";
@@ -10,19 +11,19 @@ interface ICategory {
   };
 }
 
-let category: string;
+// let category: string;
 
-export async function generateStaticParams() {
-  const books: ICard[] = await getBooksByCategory(category);
-  return books.map((book) => ({
-    slug: book._id,
-  }));
-}
+// export async function generateStaticParams() {
+//   const books: ICard[] = await getBooksByCategory(category);
+//   return books.map((book) => ({
+//     slug: book._id,
+//   }));
+// }
 
 export const revalidate = 60;
 
 const Category = async ({ params: { category } }: ICategory) => {
-  category = category;
+  // category = category;
 
   const books = await getBooksByCategory(category);
 
@@ -37,6 +38,8 @@ const Category = async ({ params: { category } }: ICategory) => {
   return (
     <>
       <Modal />
+      {/* <CardInfo />
+      </Modal> */}
       <section>
         <h2>{category.replace(/%20/g, " ")}</h2>
         <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>

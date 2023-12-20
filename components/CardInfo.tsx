@@ -1,17 +1,21 @@
 import { getBookById } from "@/services/getBooks";
 import Image from "next/image";
 
-interface ICardInfo {
-  id: string;
+interface IBook {
+  title: string;
+  author: string;
+  description: string;
+  book_image: string;
+  buy_links: { name: string; url: string }[];
 }
 
-const CardInfo = async ({ id }: ICardInfo) => {
-  const { title, author, description, book_image, buy_links } =
-    await getBookById(id);
-  const buyLinks: { name: string; url: string }[] = buy_links.filter(
+const CardInfo = async ({ id }: { id: string }) => {
+  const book: IBook = await getBookById(id);
+  const { title, author, description, book_image, buy_links } = book;
+  const buyLinks = buy_links.filter(
     (link: { name: string; url: string }) =>
       link.name === "Amazon" ||
-      link.name === "Apple Books" ||
+      link.name === "Apple" ||
       link.name === "Barnes and Noble"
   );
 

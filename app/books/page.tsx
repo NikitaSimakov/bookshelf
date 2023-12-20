@@ -1,5 +1,5 @@
 import { IBook, ICard } from "@/types/types";
-import { getTopBooks } from "@/services/getBooks";
+import { getCategories, getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
 
