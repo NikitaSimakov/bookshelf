@@ -1,67 +1,51 @@
 "use client";
-import { getBookById } from "@/services/getBooks";
+import { useBooks } from "@/store/store";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
-
-interface IBook {
-  title: string;
-  author: string;
-  description: string;
-  book_image: string | undefined;
-  buy_links: { name: string; url: string }[];
-}
+import { useEffect } from "react";
+import ShoppingButton from "./ShoppingButton";
+import { filterLinks } from "@/services/helpers";
 
 const CardInfo = () => {
   const params = useSearchParams();
   const id = params.get("modal");
-  const [book, setBook] = useState({
-    title: "",
-    author: "",
-    description: "",
-    book_image: "",
-    buy_links: [{ name: "", url: "" }],
-  });
-  useEffect(() => {
-    id && getBookById(id).then((res) => setBook(res));
-  }, [id]);
-  const { title, author, description, book_image, buy_links } = book;
-  const buyLinks = buy_links.filter(
-    (link: { name: string; url: string }) =>
-      link.name === "Amazon" ||
-      link.name === "Apple" ||
-      link.name === "Barnes and Noble"
-  );
 
+  const [setBook, book] = useBooks((state) => [state.setBook, state.book]);
+
+  useEffect(() => {
+    setBook(id!);
+  }, [id, setBook]);
+
+  const { title, author, description, book_image, buy_links } = book;
+  // const buyLinks = buy_links.filter(
+  //   (link: { name: string; url: string }) =>
+  //     link.name === "Amazon" ||
+  //     link.name === "Apple" ||
+  //     link.name === "Barnes and Noble"
+  // );
+  const buyLinks = filterLinks(buy_links);
   const markup = (
     <div>
       <div>
-        <Image
-          src={
-            book_image ||
-            "https://storage.googleapis.com/du-prd/books/images/9780735211292.jpg"
-          }
-          alt={title}
-          width={283}
-          height={427}
-        />
+        <Image src={book_image} alt={title} width={283} height={427} />
       </div>
       <div>
         <h3>{title}</h3>
         <p>{author}</p>
         <p>{description}</p>
-        <div>
+        <ul>
           {buyLinks.map(({ name, url }) => (
-            <a key={url} href={url}>
-              {name}
-            </a>
+            <li key={url}>
+              <a href={url}>{name}</a>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
+
+      <ShoppingButton id={id} />
     </div>
   );
   return markup;
-  return <></>;
 };
 
 export default CardInfo;

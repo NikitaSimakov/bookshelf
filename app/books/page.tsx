@@ -1,10 +1,10 @@
-import { IBook, ICard } from "@/types/types";
+import { IBooks, ICard } from "@/types/types";
 import { getCategories, getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
 
 const Books = async () => {
-  const topBooks: IBook[] = await getTopBooks();
+  const topBooks: IBooks[] = await getTopBooks();
   const bookCardMarkup = topBooks.map(({ list_name, books }) => {
     const markup = books?.map(({ _id, author, title, book_image }: ICard) => (
       <Card

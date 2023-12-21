@@ -1,47 +1,44 @@
 import { createWithEqualityFn } from "zustand/traditional";
-import {
-  getBooksByCategory,
-  getCategories,
-  getTopBooks,
-} from "@/services/getBooks";
-import { IBook, ICard, IListName } from "@/types/types";
+import { getBookById } from "@/services/getBooks";
+import { devtools, persist } from "zustand/middleware";
+import { IBook } from "@/types/types";
 
 interface UseBooks {
-  categories: IListName[];
-  category: null | string;
-  topBooks: IBook[];
-  booksByCategory: ICard[];
-  loading: boolean;
   error: null | string;
-  getCategories: () => Promise<void>;
-  getTopBooks: () => Promise<void>;
-  getBooksByCategory: (category: string) => Promise<void>;
-  setCategory: (category: string) => void;
+  shoppingList: IBook[];
+  book: IBook;
+  setBook: (id: string) => void;
+  setBookToShoppingList: (book: IBook) => void;
+  removeFromShoppingList: (id: string) => void;
 }
 
-export const useBooks = createWithEqualityFn<UseBooks>()((set) => ({
-  categories: [],
-  category: null,
-  topBooks: [],
-  booksByCategory: [],
-  loading: false,
-  error: null,
-  getCategories: async () => {
-    set({ loading: true });
-    const categories = await getCategories();
-    set({ categories, loading: false });
-  },
-  setCategory: (category) => {
-    set({ category });
-  },
-  getTopBooks: async () => {
-    set({ loading: true });
-    const topBooks = await getTopBooks();
-    set({ topBooks, loading: false });
-  },
-  getBooksByCategory: async (category) => {
-    set({ loading: true });
-    const booksByCategory = await getBooksByCategory(category);
-    set({ booksByCategory, loading: false });
-  },
-}));
+export const useBooks = createWithEqualityFn<UseBooks>()(
+  persist(
+    devtools((set) => ({
+      error: null,
+      shoppingList: [],
+      book: {
+        _id: "",
+        title: "",
+        author: "",
+        description: "",
+        book_image: "",
+        list_name: "",
+        buy_links: [{ name: "", url: "" }],
+      },
+      setBook: async (id) => {
+        const book = await getBookById(id);
+        set((state) => (state.book = book));
+      },
+      setBookToShoppingList: (book) =>
+        set((state) => ({
+          shoppingList: [...state.shoppingList, book],
+        })),
+      removeFromShoppingList: (id) =>
+        set((state) => ({
+          shoppingList: state.shoppingList.filter((book) => book?._id !== id),
+        })),
+    })),
+    { name: "shopping-list" }
+  )
+);
