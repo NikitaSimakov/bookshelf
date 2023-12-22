@@ -7,14 +7,14 @@ import { useLayoutEffect, useState } from "react";
 const ShoppingList = () => {
   const [isLayoutReady, setIsLayoutReady] = useState(false);
 
-  useLayoutEffect(() => {
-    setIsLayoutReady(true);
-  }, []);
-
   const [shoppingList, removeBook] = useBooks((state) => [
     state.shoppingList,
     state.removeFromShoppingList,
   ]);
+  useLayoutEffect(() => {
+    setIsLayoutReady(true);
+  }, []);
+
   const shoppingItems = shoppingList?.map(
     ({ _id, book_image, title, author, list_name, description, buy_links }) => {
       const buyLinks = filterLinks(buy_links);
@@ -50,7 +50,11 @@ const ShoppingList = () => {
       return markup;
     }
   );
-  return <ul>{isLayoutReady && shoppingItems}</ul>;
+  return shoppingList.length !== 0 ? (
+    <ul>{isLayoutReady && shoppingItems}</ul>
+  ) : (
+    <h2>This page is empty, add some books and proceed to order.</h2>
+  );
 };
 
 export default ShoppingList;

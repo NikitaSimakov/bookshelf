@@ -2,6 +2,7 @@ import { IBooks, ICard } from "@/types/types";
 import { getCategories, getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
+import Link from "next/link";
 
 const Books = async () => {
   const topBooks: IBooks[] = await getTopBooks();
@@ -18,6 +19,7 @@ const Books = async () => {
         <ul style={{ display: "flex", gap: "15px", listStyle: "none" }}>
           {markup}
         </ul>
+        <Link href={`/books/${list_name}`}>See more</Link>
       </li>
     );
   });
