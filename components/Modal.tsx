@@ -2,9 +2,7 @@
 import Link from "next/link";
 import style from "./modal.module.scss";
 import { usePathname, useSearchParams } from "next/navigation";
-// import { useEffect, useRef } from "react";
 import CardInfo from "./CardInfo";
-import { getBookById } from "@/services/getBooks";
 
 interface IModal {
   children: React.ReactNode;
@@ -22,10 +20,7 @@ const Modal = () =>
     const path = usePathname();
     const dialog: JSX.Element | null = id ? (
       <div className={style.overlay}>
-        <dialog
-          // ref={dialogRef}
-          className={style.modal}
-        >
+        <dialog className={style.modal}>
           <button>
             <Link
               href={path !== "/books/all" ? path : "/books"}
@@ -35,9 +30,7 @@ const Modal = () =>
               x
             </Link>
           </button>
-          <h1>This is modal window {id}</h1>
           <CardInfo />
-          {/* {children} */}
         </dialog>
       </div>
     ) : null;
