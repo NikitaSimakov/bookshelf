@@ -1,54 +1,70 @@
 "use client";
-import { useState, ChangeEvent, FormEvent, FC } from "react";
+import { useState, FormEvent, FC } from "react";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "@/app/firebase/config";
+import { useRouter } from "next/navigation";
 
-interface LoginData {
-  email: string;
-  password: string;
-}
+const RegistrationPage: FC = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-const LoginPage: FC = () => {
-  const [loginData, setLoginData] = useState<LoginData>({
-    email: "",
-    password: "",
-  });
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
-  const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setLoginData({ ...loginData, [name]: value });
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const router = useRouter();
+  const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // Здесь можно добавить логику для отправки данных на сервер для авторизации
-    console.log("Отправленные данные для авторизации:", loginData);
+    try {
+      const res = await signInWithEmailAndPassword(email, password);
+      console.log(res);
+      router.push("/books");
+      resetForm();
+    } catch (error) {
+      console.error(error);
+    }
+    // const signInUser = () => {
+    //   signInWithEmailAndPassword(email, password)
+    //     .then((res) => {
+    //       if (!res) throw new Error("Sign in failed");
+    //       console.log("successfully sign in");
+    //       router.push("/books");
+    //     })
+    //     .catch((error) => console.error(error))
+    //     .finally(resetForm);
+    // };
+    // signInUser();
   };
 
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <h2>Sign In</h2>
+      <form onSubmit={handleSignUp}>
         <div>
-          <label>Email:</label>
+          <label htmlFor="email">Email:</label>
           <input
+            id="email"
             type="email"
-            name="email"
-            value={loginData.email}
-            onChange={handleInputChange}
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label htmlFor="password">Password:</label>
           <input
+            id="password"
             type="password"
-            name="password"
-            value={loginData.password}
-            onChange={handleInputChange}
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Login</button>
+        <button type="submit">Register</button>
       </form>
     </div>
   );
 };
 
-export default LoginPage;
+export default RegistrationPage;
