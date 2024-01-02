@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FC } from "react";
+import UserBar from "./UserBar";
 
 const Header: FC = () => {
   return (
@@ -11,6 +12,9 @@ const Header: FC = () => {
           </li>
           <li>
             <Link href="/shopping">Shopping list</Link>
+          </li>
+          <li>
+            <UserBar />
           </li>
         </ul>
       </nav>

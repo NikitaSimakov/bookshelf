@@ -8,7 +8,7 @@ import { filterLinks } from "@/services/helpers";
 
 const CardInfo = () => {
   const params = useSearchParams();
-  const id = params.get("modal");
+  const id = params!.get("modal");
 
   const [setBook, book] = useBooks((state) => [state.setBook, state.book]);
 

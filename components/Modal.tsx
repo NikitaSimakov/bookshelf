@@ -16,8 +16,8 @@ const Modal = () =>
   // { children }: { children: React.ReactNode }
   {
     const searchParams = useSearchParams();
-    const id = searchParams.get("modal");
-    const path = usePathname();
+    const id = searchParams!.get("modal");
+    const path = usePathname()!;
     const dialog: JSX.Element | null = id ? (
       <div className={style.overlay}>
         <dialog className={style.modal}>

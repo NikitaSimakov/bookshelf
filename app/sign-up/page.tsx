@@ -2,7 +2,7 @@
 import { useState, FormEvent, FC } from "react";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { updateProfile } from "firebase/auth";
-import { auth } from "@/app/firebase/config";
+// import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
 
 const RegistrationPage: FC = () => {
@@ -10,8 +10,8 @@ const RegistrationPage: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [createUserWithEmailAndPassword] =
-    useCreateUserWithEmailAndPassword(auth);
+  // const [createUserWithEmailAndPassword] =
+  //   useCreateUserWithEmailAndPassword(auth);
 
   const resetForm = () => {
     setUsername("");
@@ -23,11 +23,11 @@ const RegistrationPage: FC = () => {
   const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const res = await createUserWithEmailAndPassword(email, password);
-      console.log(res);
-      await updateProfile(auth.currentUser!, {
-        displayName: username,
-      });
+      // const res = await createUserWithEmailAndPassword(email, password);
+      // console.log(res);
+      // await updateProfile(auth.currentUser!, {
+      //   displayName: username,
+      // });
       router.push("/sign-in");
       resetForm();
     } catch (error) {

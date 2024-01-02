@@ -1,14 +1,14 @@
 "use client";
 import { useState, FormEvent, FC } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
-import { auth } from "@/app/firebase/config";
+// import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
 
 const RegistrationPage: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  // const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
   const resetForm = () => {
     setEmail("");
@@ -19,8 +19,8 @@ const RegistrationPage: FC = () => {
   const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      const res = await signInWithEmailAndPassword(email, password);
-      console.log(res);
+      // const res = await signInWithEmailAndPassword(email, password);
+      // console.log(res);
       router.push("/books");
       resetForm();
     } catch (error) {
