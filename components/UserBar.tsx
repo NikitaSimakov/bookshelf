@@ -1,16 +1,30 @@
 "use client";
 
-// import { auth } from "@/app/firebase/config";
-// import { useAuthState } from "react-firebase-hooks/auth";
-import SignOutButton from "./SignOut";
+import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 
 const UserBar = () => {
-  // const [user, loading] = useAuthState(auth);
-  // console.log(user);
+  const session = useSession();
+  console.log(session);
+
   return (
     <div>
-      {/* {user?.displayName}
-      {user && <SignOutButton />} */}
+      {session?.data?.user?.image && (
+        <>
+          <img
+            height={30}
+            width={30}
+            src={session?.data?.user?.image}
+            alt="Profile photo"
+          />
+          <p>{session?.data?.user?.name}</p>
+        </>
+      )}
+      {session.status === "authenticated" ? (
+        <button onClick={() => signOut()}>Sign Out</button>
+      ) : (
+        <Link href="api/auth/signin">Sign In</Link>
+      )}
     </div>
   );
 };

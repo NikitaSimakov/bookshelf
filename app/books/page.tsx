@@ -1,19 +1,10 @@
-"use client";
 import { IBooks, ICard } from "@/types/types";
-import { getCategories, getTopBooks } from "@/services/getBooks";
+import { getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
 import Link from "next/link";
-import { useSession } from "next-auth/react";
-import { redirect } from "next/dist/server/api-utils";
 
 const Books = async () => {
-  const session = useSession({
-    required: true,
-    onUnauthenticated() {
-      // redirect("/sign-in");
-    },
-  });
   const topBooks: IBooks[] = await getTopBooks();
   const bookCardMarkup = topBooks.map(({ list_name, books }) => {
     const markup = books?.map(({ _id, author, title, book_image }: ICard) => (
