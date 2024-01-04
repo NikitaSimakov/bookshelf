@@ -2,6 +2,8 @@
 import { useState, FormEvent, FC } from "react";
 
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
+import GoogleButton from "@/components/GoogleButton";
 
 const RegistrationPage: FC = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +18,13 @@ const RegistrationPage: FC = () => {
   const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      router.push("/books");
+      signIn("credentials", {
+        email,
+        password,
+        redirect: true,
+        callbackUrl: "/books",
+      });
+      // router.push("/books");
       resetForm();
     } catch (error) {
       console.error(error);
@@ -47,6 +55,7 @@ const RegistrationPage: FC = () => {
         </div>
         <button type="submit">Register</button>
       </form>
+      <GoogleButton />
     </div>
   );
 };
