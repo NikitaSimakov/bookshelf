@@ -8,7 +8,6 @@ import style from "./userBar.module.scss";
 const UserBar = () => {
   const session = useSession();
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <div className={style.userBarWrapper}>

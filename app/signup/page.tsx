@@ -1,10 +1,9 @@
 "use client";
 import { useState, FormEvent, FC } from "react";
-
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
-import Link from "next/link";
 
 const RegistrationPage: FC = () => {
   const [username, setUsername] = useState("");
@@ -23,14 +22,10 @@ const RegistrationPage: FC = () => {
     event.preventDefault();
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      // console.log("createUserWithEmail...", res);
       await updateProfile(auth.currentUser!, {
         displayName: username,
       });
       router.push("/signin");
-      // updateProfile(auth.currentUser as User, {
-      //   displayName: username,
-      // }).catch((err) => console.log(err));
       resetForm();
     } catch (error) {
       console.error(error);

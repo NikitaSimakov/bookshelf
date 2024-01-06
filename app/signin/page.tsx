@@ -9,7 +9,7 @@ import { useSearchParams } from "next/navigation";
 const RegistrationPage: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log(useSearchParams().get("category"));
+  // console.log(useSearchParams().get("category"));
   const callbackUrl = useSearchParams().get("category") || "/books/all";
   const resetForm = () => {
     setEmail("");
@@ -53,7 +53,7 @@ const RegistrationPage: FC = () => {
             onChange={(event) => setPassword(event.target.value)}
           />
         </div>
-        <button type="submit">Register</button>
+        <button type="submit">Sign in</button>
       </form>
       <GoogleButton />
       <Link href="/signup">Sign Up</Link>
