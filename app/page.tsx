@@ -1,7 +1,13 @@
 // import { useRouter } from "next/navigation";
 
-export default function Home() {
-  // const router = useRouter();
+import { authConfig } from "@/config/auth";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
 
-  return <h1>The first page</h1>;
+export default async function Home() {
+  // const router = useRouter();
+  const session = await getServerSession(authConfig);
+  if (session?.user?.email) redirect("/books/all");
+  if (!session?.user?.email) redirect("/signin");
+  return <></>;
 }

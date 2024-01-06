@@ -1,0 +1,16 @@
+.userBarWrapper {
+  display: flex;
+  gap: 15px;
+  align-content: stretch;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.userPhoto {
+  border-radius: 50%;
+}
+
+.userName {
+  margin: 0;
+}

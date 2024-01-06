@@ -1,23 +1,27 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import style from "./userBar.module.scss";
 
 const UserBar = () => {
   const session = useSession();
-  console.log("auth.js", session);
+  const pathname = usePathname();
+  console.log(pathname);
 
   return (
-    <div>
+    <div className={style.userBarWrapper}>
       {session?.data?.user?.image && (
         <img
           height={30}
           width={30}
           src={session?.data?.user?.image}
           alt="Profile photo"
+          className={style.userPhoto}
         />
       )}
-      <p>{session?.data?.user?.name}</p>
+      <p className={style.userName}>{session?.data?.user?.name}</p>
       {session.status === "authenticated" ? (
         <button
           onClick={() => {
@@ -27,7 +31,14 @@ const UserBar = () => {
           Sign Out
         </button>
       ) : (
-        <Link href="/sign-in">Sign In</Link>
+        <Link
+          href={{
+            pathname: "/signin",
+            query: { category: pathname || "" },
+          }}
+        >
+          Sign In
+        </Link>
       )}
     </div>
   );

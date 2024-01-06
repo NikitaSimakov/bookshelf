@@ -4,6 +4,7 @@ import { useState, FormEvent, FC } from "react";
 import { useRouter } from "next/navigation";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
+import Link from "next/link";
 
 const RegistrationPage: FC = () => {
   const [username, setUsername] = useState("");
@@ -22,11 +23,11 @@ const RegistrationPage: FC = () => {
     event.preventDefault();
     try {
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      console.log("createUserWithEmail...", res);
+      // console.log("createUserWithEmail...", res);
       await updateProfile(auth.currentUser!, {
         displayName: username,
       });
-      router.push("/sign-in");
+      router.push("/signin");
       // updateProfile(auth.currentUser as User, {
       //   displayName: username,
       // }).catch((err) => console.log(err));
@@ -38,6 +39,7 @@ const RegistrationPage: FC = () => {
 
   return (
     <div>
+      <Link href="/books/all">X</Link>
       <h2>Registration</h2>
       <form onSubmit={handleSignUp}>
         <div>
@@ -69,6 +71,7 @@ const RegistrationPage: FC = () => {
         </div>
         <button type="submit">Sign up</button>
       </form>
+      <Link href="/signin">Sign In</Link>
     </div>
   );
 };
