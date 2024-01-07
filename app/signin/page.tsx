@@ -2,15 +2,19 @@
 
 import { useState, FormEvent, FC } from "react";
 import { signIn } from "next-auth/react";
-import GoogleButton from "@/components/GoogleButton";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { toast, ToastContainer } from "react-toastify";
+import GoogleButton from "@/components/GoogleButton";
+import Spinner from "@/components/Spinner";
 
 const RegistrationPage: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // console.log(useSearchParams().get("category"));
+  const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
   const callbackUrl = useSearchParams().get("category") || "/books/all";
+
   const resetForm = () => {
     setEmail("");
     setPassword("");
@@ -18,16 +22,24 @@ const RegistrationPage: FC = () => {
 
   const handleSignUp = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+    setIsLoading(true);
     try {
-      signIn("credentials", {
+      const res = await signIn("credentials", {
         email,
         password,
-        redirect: true,
-        callbackUrl,
+        redirect: false,
       });
+      res?.ok
+        ? router.push(callbackUrl)
+        : toast.error("Email or password is incorrect. Please try again.");
+      setIsLoading(false);
       resetForm();
     } catch (error) {
-      console.error(error);
+      console.error("handlesignup", error);
+      toast.error(
+        "Произошла ошибка при аутентификации. Пожалуйста, попробуйте еще раз."
+      );
+      setIsLoading(false);
     }
   };
 
@@ -55,8 +67,11 @@ const RegistrationPage: FC = () => {
         </div>
         <button type="submit">Sign in</button>
       </form>
+
       <GoogleButton />
       <Link href="/signup">Sign Up</Link>
+      <Spinner isLoading={isLoading} />
+      <ToastContainer />
     </div>
   );
 };

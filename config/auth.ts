@@ -33,7 +33,7 @@ export const authConfig: AuthOptions = {
             }
             return null;
           })
-          .catch((error) => console.log(error));
+          .catch((error) => console.log("config/auth.ts", error));
       },
     }),
   ],

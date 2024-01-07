@@ -7,7 +7,7 @@ import style from "./userBar.module.scss";
 
 const UserBar = () => {
   const session = useSession();
-  const pathname = usePathname();
+  const pathname = usePathname() || "";
 
   return (
     <div className={style.userBarWrapper}>
@@ -33,7 +33,7 @@ const UserBar = () => {
         <Link
           href={{
             pathname: "/signin",
-            query: { category: pathname || "" },
+            query: { category: pathname },
           }}
         >
           Sign In
