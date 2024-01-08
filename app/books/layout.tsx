@@ -1,18 +1,16 @@
 import Categories from "@/components/Categories";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Bookshelf",
-  description: "Here we are reading",
-};
+import Header from "@/components/Header";
 
 const BooksLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section>
-      <h3>Books</h3>
-      <Categories />
-      {children}
-    </section>
+    <>
+      <Header />
+      <section>
+        <h3>Books</h3>
+        <Categories />
+        {children}
+      </section>
+    </>
   );
 };
 

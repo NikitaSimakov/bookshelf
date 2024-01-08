@@ -12,8 +12,7 @@ interface ICategory {
 }
 
 export async function generateMetadata({ params }: ICategory) {
-  // console.log(params.category.split("%20").join(" "));
-  const title = params.category.split("%20").join(" ");
+  const title = `Bookshelf | ${params.category.split("%20").join(" ")}`;
   return {
     title,
   };

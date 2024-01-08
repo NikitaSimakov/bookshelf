@@ -3,6 +3,11 @@ import { getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bookshelf | All books",
+};
 
 const Books = async () => {
   const topBooks: IBooks[] = await getTopBooks();

@@ -8,7 +8,7 @@ import { toast, ToastContainer } from "react-toastify";
 import GoogleButton from "@/components/GoogleButton";
 import Spinner from "@/components/Spinner";
 
-const RegistrationPage: FC = () => {
+const SignIn: FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -46,6 +46,7 @@ const RegistrationPage: FC = () => {
 
   return (
     <div>
+      <Link href="/books/all">X</Link>
       <h2>Sign In</h2>
       <form onSubmit={handleSignUp}>
         <div>
@@ -77,4 +78,4 @@ const RegistrationPage: FC = () => {
   );
 };
 
-export default RegistrationPage;
+export default SignIn;

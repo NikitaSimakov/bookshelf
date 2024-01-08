@@ -53,7 +53,7 @@ const RegistrationPage: FC = () => {
   return (
     <div>
       <Link href="/books/all">X</Link>
-      <h2>Registration</h2>
+      <h2>Sign up</h2>
       <form onSubmit={handleSignUp}>
         <div>
           <label htmlFor="username">Username:</label>
