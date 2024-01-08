@@ -17,12 +17,7 @@ const CardInfo = () => {
   }, [id, setBook]);
 
   const { title, author, description, book_image, buy_links } = book;
-  // const buyLinks = buy_links.filter(
-  //   (link: { name: string; url: string }) =>
-  //     link.name === "Amazon" ||
-  //     link.name === "Apple" ||
-  //     link.name === "Barnes and Noble"
-  // );
+
   const buyLinks = filterLinks(buy_links);
   const markup = (
     <div>

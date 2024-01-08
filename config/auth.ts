@@ -25,7 +25,6 @@ export const authConfig: AuthOptions = {
         )
           .then((userCredential) => {
             if (userCredential.user) {
-              // console.log("userCredential", userCredential.user);
               return {
                 name: userCredential.user.displayName,
                 email: userCredential.user.email,
@@ -33,7 +32,7 @@ export const authConfig: AuthOptions = {
             }
             return null;
           })
-          .catch((error) => console.log("config/auth.ts", error));
+          .catch((error) => console.log(error));
       },
     }),
   ],

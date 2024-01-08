@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import CardInfo from "@/components/CardInfo";
+// import CardInfo from "@/components/CardInfo";
 // import CardInfo from "@/components/CardInfo";
 import Modal from "@/components/Modal";
 import { getBooksByCategory } from "@/services/getBooks";
@@ -8,6 +8,14 @@ import { ICard } from "@/types/types";
 interface ICategory {
   params: {
     category: string;
+  };
+}
+
+export async function generateMetadata({ params }: ICategory) {
+  // console.log(params.category.split("%20").join(" "));
+  const title = params.category.split("%20").join(" ");
+  return {
+    title,
   };
 }
 
