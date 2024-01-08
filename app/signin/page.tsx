@@ -32,13 +32,14 @@ const RegistrationPage: FC = () => {
       res?.ok
         ? router.push(callbackUrl)
         : toast.error("Email or password is incorrect. Please try again.");
-      setIsLoading(false);
+
       resetForm();
     } catch (error) {
       console.error("handlesignup", error);
       toast.error(
         "Произошла ошибка при аутентификации. Пожалуйста, попробуйте еще раз."
       );
+    } finally {
       setIsLoading(false);
     }
   };
