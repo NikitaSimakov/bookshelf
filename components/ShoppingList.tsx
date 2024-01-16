@@ -50,8 +50,13 @@ const ShoppingList = () => {
       return markup;
     }
   );
-  return shoppingList.length !== 0 ? (
-    <ul>{isLayoutReady && shoppingItems}</ul>
+  // return shoppingList.length !== 0 ? (
+  //   <ul>{isLayoutReady && shoppingItems}</ul>
+  // ) : (
+  //   <h2>This page is empty, add some books and proceed to order.</h2>
+  // );
+  return isLayoutReady && shoppingList.length !== 0 ? (
+    <ul>{shoppingItems}</ul>
   ) : (
     <h2>This page is empty, add some books and proceed to order.</h2>
   );

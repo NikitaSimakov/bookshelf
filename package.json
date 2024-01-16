@@ -2,6 +2,7 @@
   "name": "bookshelf",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://bookshelf-mocha.vercel.app/books/",
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
@@ -14,9 +15,15 @@
     "@types/react-dom": "18.2.17",
     "eslint": "8.55.0",
     "eslint-config-next": "14.0.4",
+    "firebase": "^10.7.1",
     "next": "14.0.4",
+    "next-auth": "^4.24.5",
+    "normalize.css": "^8.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-firebase-hooks": "^5.1.1",
+    "react-loader-spinner": "^6.1.6",
+    "react-toastify": "^9.1.3",
     "sass": "^1.69.5",
     "typescript": "5.3.3",
     "zustand": "^4.4.7"

@@ -6,16 +6,18 @@ const Categories = async () => {
   const categories: IListName[] = await getCategories();
 
   return (
-    <ul>
-      <li>
-        <Link href={"/books/all"}>All categories</Link>
-      </li>
-      {categories.map(({ list_name }) => (
-        <li key={list_name}>
-          <Link href={`/books/${list_name}`}>{list_name}</Link>
+    <div>
+      <ul>
+        <li>
+          <Link href={"/books/all"}>All categories</Link>
         </li>
-      ))}
-    </ul>
+        {categories.map(({ list_name }) => (
+          <li key={list_name}>
+            <Link href={`/books/${list_name}`}>{list_name}</Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

@@ -1,8 +1,13 @@
 import { IBooks, ICard } from "@/types/types";
-import { getCategories, getTopBooks } from "@/services/getBooks";
+import { getTopBooks } from "@/services/getBooks";
 import Card from "@/components/Card";
 import Modal from "@/components/Modal";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bookshelf | All books",
+};
 
 const Books = async () => {
   const topBooks: IBooks[] = await getTopBooks();
@@ -31,5 +36,7 @@ const Books = async () => {
     </section>
   );
 };
+
+Books.requireAuth = true;
 
 export default Books;
