@@ -11,6 +11,7 @@ import { IoClose } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiLock } from "react-icons/fi";
 import style from "./signin.module.scss";
+import ThemeToggleBtn from "@/components/ThemeToggleBtn";
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState("");
@@ -51,6 +52,7 @@ const SignIn: FC = () => {
   return (
     <>
       <div className={style.formWrapper}>
+        <ThemeToggleBtn />
         <Link className={style.closeButton} href="/books/all">
           <IoClose size={"28px"} />
         </Link>

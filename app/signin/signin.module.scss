@@ -9,14 +9,14 @@
 .formWrapper {
   position: relative;
 
-  border: 2px solid #111111;
+  border: 2px solid var(--primary-text-color);
   border-radius: 18px;
 
   display: flex;
   flex-direction: column;
   width: 580px;
   margin: 0 auto;
-  background-color: #f6f6f6;
+  background-color: var(--background-color);
   padding: 80px 40px 40px;
 }
 
@@ -46,14 +46,15 @@
   width: 499px;
   height: 64px;
   border-radius: 40px;
-  border: 2px solid rgba(17, 17, 17, 1);
+  border: 2px solid var(--primary-text-color);
   text-indent: 40px;
+  background-color: var(--background-color);
 }
 
 .input::placeholder {
-  // padding-left: 40px;
+  font-family: inherit;
 
-  font-family: DM Sans;
+  // font-family: DM Sans;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
@@ -61,7 +62,7 @@
   text-align: left;
   text-transform: uppercase;
 
-  color: rgba(17, 17, 17, 1);
+  color: var(--primary-text-color);
 }
 
 .inputIconBox {
@@ -71,6 +72,7 @@
   position: absolute;
   top: 18px;
   right: 35px;
+  stroke: var(--primary-text-color);
 }
 .submitButton {
   margin-top: 40px;
@@ -78,9 +80,9 @@
   height: 64px;
   border-radius: 40px;
   border: none;
-  color: rgba(243, 243, 243, 1);
-  background-color: rgba(17, 17, 17, 1);
-  font-family: DM Sans;
+  color: var(--button-text-color);
+  background-color: var(--primary-text-color);
+  // font-family: DM Sans;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
@@ -100,9 +102,9 @@
 
 .link {
   text-transform: uppercase;
-  color: rgba(17, 17, 17, 0.5);
+  color: var(--secondary-text-color);
 
-  font-family: DM Sans;
+  // font-family: DM Sans;
   font-size: 18px;
   font-weight: 700;
   line-height: 24px;
