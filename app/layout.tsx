@@ -1,16 +1,13 @@
 "use client";
 
 import { DM_Sans } from "next/font/google";
+import { SessionProvider } from "next-auth/react";
+import "./globals.scss";
 
 const dmSans = DM_Sans({
   weight: ["400", "700"],
   style: ["normal", "italic"],
 });
-// import Header from "@/components/Header";
-
-import "./globals.scss";
-import { SessionProvider } from "next-auth/react";
-
 export default function RootLayout({
   children,
 }: {
@@ -19,10 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={dmSans.className}>
       <body data-theme="light">
-        <SessionProvider>
-          {/* <Header /> */}
-          {children}
-        </SessionProvider>
+        <SessionProvider>{children}</SessionProvider>
       </body>
     </html>
   );

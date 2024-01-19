@@ -1,7 +1,64 @@
+.header {
+  border: 1.5px solid #111111;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.headerContainer {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+}
+
+// .nav:last-child {
+//   margin-left: auto;
+// }
+
 .navList {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 15px;
-  list-style: none;
+  gap: 24px;
 }
+
+.headerIcon {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 19px 0;
+  margin-right: 76px;
+}
+
+.navLink {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: -4%;
+
+  &Active {
+    border-radius: 36px;
+    background-color: #eac645;
+    padding: 8px 16px;
+    border-radius: 36px;
+    font-weight: 700;
+  }
+
+  &:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+  }
+}
+
+// .navListItem:nth-child(2) {
+//   display: flex;
+//   flex-wrap: wrap;
+//   gap: 4px;
+//   align-items: center;
+// }

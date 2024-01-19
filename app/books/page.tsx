@@ -21,7 +21,14 @@ const Books = async () => {
     return (
       <li key={list_name}>
         <h2 style={{ color: "red" }}>{list_name}</h2>
-        <ul style={{ display: "flex", gap: "15px", listStyle: "none" }}>
+        <ul
+          style={{
+            display: "flex",
+            gap: "15px",
+            flexWrap: "wrap",
+            listStyle: "none",
+          }}
+        >
           {markup}
         </ul>
         <Link href={`/books/${list_name}`}>See more</Link>

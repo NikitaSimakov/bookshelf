@@ -5,6 +5,8 @@
   --primary-text-color: #111111;
   --secondary-text-color: rgba(17, 17, 17, 0.5);
   --button-text-color: #f3f3f3;
+  --toggle-bg: linear-gradient(#4f2ee8, #dcdcdc);
+  --toggle-fg: #ffd000;
 }
 
 [data-theme="dark"] {
@@ -12,6 +14,8 @@
   --primary-text-color: #f6f6f6;
   --secondary-text-color: rgba(246, 246, 246, 0.5);
   --button-text-color: #202024;
+  --toggle-bg: linear-gradient(#4f2ee8, #686868);
+  --toggle-fg: #00a6ff;
 }
 * {
   box-sizing: border-box;
@@ -39,8 +43,11 @@ ul {
   list-style: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  outline: 1px solid red;
 }
