@@ -12,17 +12,6 @@
   display: flex;
 }
 
-// .nav:last-child {
-//   margin-left: auto;
-// }
-
-.navList {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 24px;
-}
-
 .headerIcon {
   display: flex;
   gap: 8px;
@@ -55,10 +44,17 @@
     align-items: center;
   }
 }
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
 
-// .navListItem:nth-child(2) {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 4px;
-//   align-items: center;
-// }
+.userBarBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 24px;
+  margin-left: auto;
+}

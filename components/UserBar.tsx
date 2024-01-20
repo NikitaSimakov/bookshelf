@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { IoArrowForwardSharp } from "react-icons/io5";
 import style from "./userBar.module.scss";
 
 const UserBar = () => {
@@ -11,24 +13,31 @@ const UserBar = () => {
 
   return (
     <div className={style.userBarWrapper}>
-      {session?.data?.user?.image && (
-        <img
-          height={30}
-          width={30}
-          src={session?.data?.user?.image}
-          alt="Profile photo"
-          className={style.userPhoto}
-        />
-      )}
-      <p className={style.userName}>{session?.data?.user?.name}</p>
+      <div className={style.userWrapper}>
+        {session?.data?.user?.image && (
+          <img
+            src={session?.data?.user?.image}
+            alt="Profile photo"
+            className={style.userPhoto}
+          />
+        )}
+        <p className={style.userName}>{session?.data?.user?.name}</p>
+        <IoMdArrowDropdown className={style.arrow} size={26} fill="#ffffff" />
+      </div>
       {session.status === "authenticated" ? (
-        <button
-          onClick={() => {
-            signOut();
-          }}
-        >
-          Sign Out
-        </button>
+        <>
+          <div className={style.signOutBtnWrapper}>
+            <button
+              className={style.logOutBtn}
+              onClick={() => {
+                signOut();
+              }}
+            >
+              Log Out
+              <IoArrowForwardSharp stroke="#EAC645" />
+            </button>
+          </div>
+        </>
       ) : (
         <Link
           href={{

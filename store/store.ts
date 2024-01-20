@@ -6,9 +6,7 @@ import { IBook } from "@/types/types";
 interface UseBooks {
   error: null | string;
   shoppingList: IBook[];
-  isDark: boolean;
   book: IBook;
-  changeTheme: () => void;
   setBook: (id: string) => void;
   setBookToShoppingList: (book: IBook) => void;
   removeFromShoppingList: (id: string) => void;
@@ -19,7 +17,6 @@ export const useBooks = createWithEqualityFn<UseBooks>()(
     devtools((set) => ({
       error: null,
       shoppingList: [],
-      isDark: false,
       book: {
         _id: "",
         title: "",
@@ -28,11 +25,6 @@ export const useBooks = createWithEqualityFn<UseBooks>()(
         book_image: "",
         list_name: "",
         buy_links: [{ name: "", url: "" }],
-      },
-      changeTheme: () => {
-        set((state) => ({
-          isDark: !state.isDark,
-        }));
       },
       setBook: async (id) => {
         const book = await getBookById(id);

@@ -1,48 +1,47 @@
 "use client";
 import { useEffect, useState } from "react";
 import style from "./ThemeToggleBtn.module.scss";
-import { useBooks } from "@/store/store";
 
 const ThemeToggleBtn = () => {
-  const [isDarkBook, setIsDarkBook] = useBooks((state) => [
-    state.isDark,
-    state.changeTheme,
-  ]);
-  const [isDark, setIsDark] = useState(isDarkBook);
-  useEffect(() => {
-    setIsDark(isDarkBook);
-    !isDark
-      ? (document.body.dataset.theme = "dark")
-      : (document.body.dataset.theme = "");
-  }, [isDark, isDarkBook]);
-  const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.checked);
-    setIsDarkBook();
-    setIsDark(e.target.checked);
-    !isDark
-      ? (document.body.dataset.theme = "dark")
-      : (document.body.dataset.theme = "");
-  };
+  const [thema, setThema] = useState<boolean>(false);
 
+  useEffect(() => {
+    localStorage.setItem("thema", JSON.stringify(thema));
+    thema
+      ? (document.body.dataset.theme = "dark")
+      : (document.body.dataset.theme = "light");
+  }, [thema]);
+  useEffect(() => {
+    const localThema = JSON.parse(localStorage.getItem("thema")!);
+    localThema && setThema(localThema);
+  }, []);
   return (
     <div className={style.toggleContainer}>
-      <input
-        type="checkbox"
-        id="check"
-        className={style.toggle}
-        onChange={(e) => toggleTheme(e)}
-        checked={isDarkBook}
-      />
-      <label htmlFor="check"></label>
+      <label htmlFor="check">
+        <input
+          type="checkbox"
+          className={style.toggleInput}
+          id="check"
+          onChange={() => setThema(!thema)}
+          checked={thema}
+        />
+        <div className={style.toggleWrapper}></div>
+      </label>
     </div>
-    // <button
-    //   aria-label="Toggle Dark Mode"
-    //   className="toggle-button"
-    //   onClick={toggleTheme}
-    // >
-    //   {isDark ? <p>-</p> : <p>+</p>}
-    // </button>
   );
 };
 
 export default ThemeToggleBtn;
+
+{
+  /* // <div className={style.toggleContainer}>
+    //   <input
+        // type="checkbox"
+        // id="check"
+        // className={style.toggle}
+        // onChange={() => setThema(!thema)}
+        // checked={thema}
+    //   />
+    //   <label htmlFor="check"></label>
+    // </div> */
+}
