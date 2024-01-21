@@ -52,7 +52,7 @@ const SignIn: FC = () => {
     <>
       <div className={style.formWrapper}>
         <Link className={style.closeButton} href="/books/all">
-          <IoClose size={"28px"} />
+          <IoClose className={style.closeButtonIcon} size={"28px"} />
         </Link>
         <form onSubmit={handleSignUp}>
           <div className={style.formBox}>

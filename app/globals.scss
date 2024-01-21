@@ -1,18 +1,26 @@
 @import "normalize.css/normalize.css";
 
 :root {
-  --background-color: #f6f6f6;
+  --background-color: #ffffff;
+  --register-background-color: #f6f6f6;
   --primary-text-color: #111111;
   --secondary-text-color: rgba(17, 17, 17, 0.5);
+  --tertiary-text-color: #111111;
+  --categories-list-item-color: rgba(17, 17, 17, 0.6);
+  --title-color: #000000;
   --button-text-color: #f3f3f3;
   --toggle-bg: linear-gradient(#4f2ee8, #dcdcdc);
   --toggle-fg: #ffd000;
 }
 
 [data-theme="dark"] {
-  --background-color: #202024;
+  --background-color: #111111;
+  --register-background-color: #202024;
   --primary-text-color: #f6f6f6;
   --secondary-text-color: rgba(246, 246, 246, 0.5);
+  --tertiary-text-color: #ffffff;
+  --categories-list-item-color: rgba(255, 255, 255, 0.6);
+  --title-color: #f3f3f3;
   --button-text-color: #202024;
   --toggle-bg: linear-gradient(#4f2ee8, #686868);
   --toggle-fg: #00a6ff;

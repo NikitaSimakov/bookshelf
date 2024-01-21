@@ -13,19 +13,19 @@ const UserBar = () => {
 
   return (
     <div className={style.userBarWrapper}>
-      <div className={style.userWrapper}>
-        {session?.data?.user?.image && (
+      {session?.data?.user?.image && (
+        <div className={style.userWrapper}>
           <img
             src={session?.data?.user?.image}
             alt="Profile photo"
             className={style.userPhoto}
           />
-        )}
-        <p className={style.userName}>{session?.data?.user?.name}</p>
-        <IoMdArrowDropdown className={style.arrow} size={26} fill="#ffffff" />
-      </div>
+          <p className={style.userName}>{session?.data?.user?.name}</p>
+        </div>
+      )}
       {session.status === "authenticated" ? (
         <>
+          <IoMdArrowDropdown className={style.arrow} size={26} fill="#ffffff" />
           <div className={style.signOutBtnWrapper}>
             <button
               className={style.logOutBtn}
@@ -40,12 +40,14 @@ const UserBar = () => {
         </>
       ) : (
         <Link
+          className={style.userBarWrapperSignIn}
           href={{
             pathname: "/signin",
             query: { category: pathname },
           }}
         >
           Sign In
+          <IoArrowForwardSharp stroke="#EAC645" />
         </Link>
       )}
     </div>

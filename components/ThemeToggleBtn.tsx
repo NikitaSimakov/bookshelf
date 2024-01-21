@@ -4,17 +4,17 @@ import style from "./ThemeToggleBtn.module.scss";
 
 const ThemeToggleBtn = () => {
   const [thema, setThema] = useState<boolean>(false);
-
+  useEffect(() => {
+    const localThema = JSON.parse(localStorage.getItem("thema")!);
+    localThema && setThema(localThema);
+  }, []);
   useEffect(() => {
     localStorage.setItem("thema", JSON.stringify(thema));
     thema
       ? (document.body.dataset.theme = "dark")
       : (document.body.dataset.theme = "light");
   }, [thema]);
-  useEffect(() => {
-    const localThema = JSON.parse(localStorage.getItem("thema")!);
-    localThema && setThema(localThema);
-  }, []);
+
   return (
     <div className={style.toggleContainer}>
       <label htmlFor="check">

@@ -11,6 +11,15 @@
   border-radius: 32px;
 
   position: relative;
+  &SignIn {
+    gap: 90px;
+    padding: 11px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    color: #ffffff;
+  }
 }
 
 .userBarWrapper:hover .signOutBtnWrapper {
