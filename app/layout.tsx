@@ -7,6 +7,7 @@ import "./globals.scss";
 const dmSans = DM_Sans({
   weight: ["400", "700"],
   style: ["normal", "italic"],
+  subsets: ["latin"],
 });
 export default function RootLayout({
   children,

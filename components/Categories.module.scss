@@ -24,6 +24,7 @@
   flex-wrap: wrap;
   flex-direction: column;
   row-gap: 24px;
+  margin-right: 20px;
 }
 
 .listItem {
@@ -31,4 +32,9 @@
   font-size: 18px;
   line-height: 24px;
   color: var(--categories-list-item-color);
+  &Active {
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4f2ee8;
+  }
 }
