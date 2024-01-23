@@ -1,8 +1,8 @@
 .header {
-  border: 1.5px solid #111111;
+  border: 1.5px solid var(--tertiary-text-color);
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
-  background-color: var(--background-color);
+  background-color: var(--header-background-color);
 }
 
 .headerContainer {

@@ -1,9 +1,8 @@
 import Card from "@/components/Card";
-// import CardInfo from "@/components/CardInfo";
-// import CardInfo from "@/components/CardInfo";
 import Modal from "@/components/Modal";
 import { getBooksByCategory } from "@/services/getBooks";
 import { ICard } from "@/types/types";
+import style from "../../../components/CategoriesAll.module.scss";
 
 interface ICategory {
   params: {
@@ -18,20 +17,9 @@ export async function generateMetadata({ params }: ICategory) {
   };
 }
 
-// let category: string;
-
-// export async function generateStaticParams() {
-//   const books: ICard[] = await getBooksByCategory(category);
-//   return books.map((book) => ({
-//     slug: book._id,
-//   }));
-// }
-
 export const revalidate = 60;
 
 const Category = async ({ params: { category } }: ICategory) => {
-  // category = category;
-
   const books = await getBooksByCategory(category);
 
   const bookCardMarkup = books?.map(
@@ -42,14 +30,23 @@ const Category = async ({ params: { category } }: ICategory) => {
       />
     )
   );
+  const categoryName = category.replace(/%20/g, " ").split(" ");
+  const firstPartCategoryName =
+    categoryName.slice(0, categoryName.length - 1).join(" ") + " ";
+  const lastPartCategoryName = categoryName[categoryName.length - 1];
+
   return (
     <>
       <Modal />
-      {/* <CardInfo />
-      </Modal> */}
       <section>
-        <h2>{category.replace(/%20/g, " ")}</h2>
-        <ul style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}>
+        <h2 className={style.pageTitle}>
+          {firstPartCategoryName}
+          <span>{lastPartCategoryName}</span>
+        </h2>
+        <ul
+          className={style.cardsList}
+          // style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}
+        >
           {bookCardMarkup}
         </ul>
       </section>

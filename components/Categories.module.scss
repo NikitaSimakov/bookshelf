@@ -1,15 +1,22 @@
 .everythingSection {
   display: flex;
   margin-top: 40px;
+  background-color: var(--background-color);
 }
 
 .leftBar {
-  max-width: 336px;
-  margin-right: 20px;
+  max-width: 356px;
+  // margin-right: 20px;
 
   display: flex;
   flex-direction: column;
   row-gap: 86px;
+
+  background-color: var(--background-color);
+}
+
+.rightBar {
+  padding-left: 40px;
 }
 
 .categoriesWrapper {

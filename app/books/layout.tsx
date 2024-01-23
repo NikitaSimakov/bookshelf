@@ -1,6 +1,7 @@
 import Categories from "@/components/Categories";
 import Header from "@/components/Header";
 import style from "../../components/Categories.module.scss";
+import Support from "@/components/Support";
 
 const BooksLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -9,6 +10,7 @@ const BooksLayout = ({ children }: { children: React.ReactNode }) => {
       <section className={`container ${style.everythingSection}`}>
         <div className={style.leftBar}>
           <Categories />
+          <Support />
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
             nostrum eius reiciendis quis eaque molestias quam quae suscipit
@@ -24,7 +26,7 @@ const BooksLayout = ({ children }: { children: React.ReactNode }) => {
             dicta ipsam earum nihil!
           </p>
         </div>
-        <div className="rightBar">{children}</div>
+        <div className={style.rightBar}>{children}</div>
       </section>
     </>
   );

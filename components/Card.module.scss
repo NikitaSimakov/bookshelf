@@ -1,0 +1,31 @@
+.card {
+  width: 180px;
+}
+
+.cardImage {
+  height: 256px;
+  width: 180px;
+  border-radius: 8px;
+  outline: 0.1px solid black;
+}
+
+.title {
+  padding-top: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: var(--tertiary-text-color);
+}
+
+.author {
+  padding-top: 4px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  text-align: left;
+  color: #b4afaf;
+}
