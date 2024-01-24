@@ -3,7 +3,8 @@ import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper.scss";
+// import "swiper/swiper.scss";
+import "./support.scss";
 import { IoIosArrowDown } from "react-icons/io";
 import supportList from "./supportList";
 
