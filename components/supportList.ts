@@ -60,7 +60,7 @@ const supportList = [
   {
     src: Reed,
     name: "Reed Elsevier",
-    width: 155,
+    width: 170,
     height: 32,
     id: 7,
     link: "https://www.relx.com/",

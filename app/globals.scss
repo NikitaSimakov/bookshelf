@@ -12,6 +12,9 @@
   --header-background-color: rgba(255, 255, 255, 1);
   --toggle-bg: linear-gradient(#4f2ee8, #dcdcdc);
   --toggle-fg: #ffd000;
+  --amazon-icon: grayscale(100%);
+  --store-icons: grayscale(100%);
+  --store-icons-hover: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
 }
 
 [data-theme="dark"] {
@@ -26,6 +29,9 @@
   --header-background-color: rgba(17, 17, 17, 1);
   --toggle-bg: linear-gradient(#4f2ee8, #686868);
   --toggle-fg: #00a6ff;
+  --amazon-icon: brightness(0) invert(1);
+  --store-icons: grayscale(100%);
+  --store-icons-hover: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
 }
 * {
   box-sizing: border-box;
@@ -35,6 +41,9 @@
 
 body {
   background-color: var(--background-color);
+  &.hidden {
+    overflow: hidden;
+  }
 }
 
 a {

@@ -5,6 +5,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoArrowForwardSharp } from "react-icons/io5";
+import userDefImg from "../public/user/user.svg";
 import style from "./userBar.module.scss";
 
 const UserBar = () => {
@@ -13,10 +14,10 @@ const UserBar = () => {
 
   return (
     <div className={style.userBarWrapper}>
-      {session?.data?.user?.image && (
+      {session?.data?.user && (
         <div className={style.userWrapper}>
           <img
-            src={session?.data?.user?.image}
+            src={session?.data?.user?.image || userDefImg.src}
             alt="Profile photo"
             className={style.userPhoto}
           />

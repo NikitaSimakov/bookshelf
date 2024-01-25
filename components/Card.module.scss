@@ -1,5 +1,11 @@
 .card {
   width: 180px;
+  position: relative;
+  &:hover .cardPopup {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .cardImage {
@@ -28,4 +34,39 @@
   letter-spacing: -0.04em;
   text-align: left;
   color: #b4afaf;
+}
+
+.cardPopup {
+  position: absolute;
+  visibility: hidden;
+  bottom: 54px;
+  // bottom: -17px;
+  // left: -1px;
+  width: 100%;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+  // align-items: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  transform: translateY(101%);
+  // transition: transform 25ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity visible 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &Text {
+    height: 70px;
+    width: 100%;
+    background-color: #eac645;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 18px;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
 }

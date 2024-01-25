@@ -43,12 +43,7 @@ const Category = async ({ params: { category } }: ICategory) => {
           {firstPartCategoryName}
           <span>{lastPartCategoryName}</span>
         </h2>
-        <ul
-          className={style.cardsList}
-          // style={{ display: "flex", flexWrap: "wrap", gap: "20px" }}
-        >
-          {bookCardMarkup}
-        </ul>
+        <ul className={style.cardsList}>{bookCardMarkup}</ul>
       </section>
     </>
   );

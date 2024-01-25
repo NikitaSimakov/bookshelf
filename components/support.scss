@@ -1,4 +1,3 @@
-// @import "swiper-vars.scss";
 @import "../node_modules/swiper/swiper-vars.scss";
 @font-face {
   font-family: "swiper-icons";
@@ -14,10 +13,6 @@
 
 //////
 ///
-.support {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
 
 .support > .support-container {
   background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%)

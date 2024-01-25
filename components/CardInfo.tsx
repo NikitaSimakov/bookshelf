@@ -5,6 +5,10 @@ import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 import ShoppingButton from "./ShoppingButton";
 import { filterLinks } from "@/services/helpers";
+import style from "./CardInfo.module.scss";
+import amazon from "../public/store/amazon.svg";
+import apple from "../public/store/apple.svg";
+import Link from "next/link";
 
 const CardInfo = () => {
   const params = useSearchParams();
@@ -20,18 +24,45 @@ const CardInfo = () => {
 
   const buyLinks = filterLinks(buy_links);
   const markup = (
-    <div>
-      <div>
-        <Image src={book_image} alt={title} width={283} height={427} />
+    <div className={style.cardInfoContainer}>
+      <div className={style.cardInfoWrapper}>
+        <Image
+          className={style.cardInfoImage}
+          src={book_image}
+          alt={title}
+          width={283}
+          height={427}
+        />
       </div>
-      <div>
-        <h3>{title}</h3>
-        <p>{author}</p>
-        <p>{description}</p>
-        <ul>
+
+      <div className={style.descriptionWrapper}>
+        <h3 className={style.title}>{title}</h3>
+        <p className={style.author}>{author}</p>
+        <p className={style.description}>
+          {description || "No more information about this book"}
+        </p>
+        <ul className={style.storesLinks}>
           {buyLinks.map(({ name, url }) => (
             <li key={url}>
-              <a href={url}>{name}</a>
+              <Link rel="noopener noreferrer" target="_blank" href={url}>
+                {name === "Amazon" ? (
+                  <Image
+                    className={style.storeIconAmazon}
+                    src={amazon}
+                    alt={name}
+                    width={62}
+                    height={16}
+                  />
+                ) : (
+                  <Image
+                    className={style.storeIcon}
+                    src={apple}
+                    alt={name}
+                    width={33}
+                    height={32}
+                  />
+                )}
+              </Link>
             </li>
           ))}
         </ul>
