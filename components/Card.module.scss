@@ -1,13 +1,15 @@
 .card {
   width: 180px;
-  position: relative;
   &:hover .cardPopup {
-    transform: translateY(0);
+    transform: translatey(0);
     opacity: 1;
     visibility: visible;
   }
 }
-
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+}
 .cardImage {
   height: 256px;
   width: 180px;
@@ -39,21 +41,17 @@
 .cardPopup {
   position: absolute;
   visibility: hidden;
-  bottom: 54px;
-  // bottom: -17px;
-  // left: -1px;
+  bottom: 0;
+
   width: 100%;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
-  // align-items: center;
+  height: 73px;
+
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  transform: translateY(101%);
-  // transition: transform 25ms cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(100%);
   transition: opacity visible 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &Text {
-    height: 70px;
+    padding: 26px 52px;
     width: 100%;
     background-color: #eac645;
     display: flex;

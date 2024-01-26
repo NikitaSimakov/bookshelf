@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import ShoppingButton from "./ShoppingButton";
 import { filterLinks } from "@/services/helpers";
 import style from "./CardInfo.module.scss";
+import StoreIcon from "./StoreIcon";
 import amazon from "../public/store/amazon.svg";
 import apple from "../public/store/apple.svg";
 import Link from "next/link";
@@ -44,7 +45,15 @@ const CardInfo = () => {
         <ul className={style.storesLinks}>
           {buyLinks.map(({ name, url }) => (
             <li key={url}>
-              <Link rel="noopener noreferrer" target="_blank" href={url}>
+              <StoreIcon
+                name={name}
+                url={url}
+                widthAmazon={62}
+                heightAmazon={16}
+                widthOther={33}
+                heightOther={32}
+              />
+              {/* <Link rel="noopener noreferrer" target="_blank" href={url}>
                 {name === "Amazon" ? (
                   <Image
                     className={style.storeIconAmazon}
@@ -62,7 +71,7 @@ const CardInfo = () => {
                     height={32}
                   />
                 )}
-              </Link>
+              </Link> */}
             </li>
           ))}
         </ul>

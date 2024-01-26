@@ -15,6 +15,7 @@
   --amazon-icon: grayscale(100%);
   --store-icons: grayscale(100%);
   --store-icons-hover: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.35));
+  --emptybox-text: rgba(0, 0, 0, 0.6);
 }
 
 [data-theme="dark"] {
@@ -32,6 +33,7 @@
   --amazon-icon: brightness(0) invert(1);
   --store-icons: grayscale(100%);
   --store-icons-hover: drop-shadow(0px 3px 3px rgba(255, 255, 255, 0.35));
+  --emptybox-text: rgba(255, 255, 255, 0.6);
 }
 * {
   box-sizing: border-box;
