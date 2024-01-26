@@ -3,6 +3,8 @@
 import { signIn } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { FcGoogle } from "react-icons/fc";
+import style from "./GoogleButton.module.scss";
 
 const GoogleButton = () => {
   const [loading, setIsLoading] = useState(false);
@@ -20,8 +22,15 @@ const GoogleButton = () => {
     }
   };
   return (
-    <button onClick={handleClick}>
-      {loading ? <span>loading..</span> : <span>Sign in with Google</span>}
+    <button className={style.googleButton} onClick={handleClick}>
+      {loading ? (
+        <span className={style.buttonText}>Loading..</span>
+      ) : (
+        <>
+          <FcGoogle className={style.googleIcon} />
+          <span className={style.buttonText}>Sign in with Google</span>
+        </>
+      )}
     </button>
   );
 };

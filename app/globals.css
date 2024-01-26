@@ -1,0 +1,35 @@
+@import "normalize.css/normalize.css";
+:root {
+  --background-color: #f6f6f6;
+  --primary-text-color: #111111;
+  --secondary-text-color: rgba(17, 17, 17, 0.5);
+  --button-text-color: #f3f3f3;
+}
+
+[data-theme=dark] {
+  --background-color: #202024;
+  --primary-text-color: #f6f6f6;
+  --secondary-text-color: rgba(246, 246, 246, 0.5);
+  --button-text-color: #202024;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  padding: 0 24px;
+}/*# sourceMappingURL=globals.css.map */

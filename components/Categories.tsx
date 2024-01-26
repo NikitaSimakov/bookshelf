@@ -1,21 +1,15 @@
 import { getCategories } from "@/services/getBooks";
 import { IListName } from "@/types/types";
-import Link from "next/link";
+import style from "./Categories.module.scss";
+import CategoriesList from "./CategoriesList";
 
 const Categories = async () => {
   const categories: IListName[] = await getCategories();
 
   return (
-    <div>
-      <ul>
-        <li>
-          <Link href={"/books/all"}>All categories</Link>
-        </li>
-        {categories.map(({ list_name }) => (
-          <li key={list_name}>
-            <Link href={`/books/${list_name}`}>{list_name}</Link>
-          </li>
-        ))}
+    <div className={style.categoriesWrapper}>
+      <ul className={style.categoriesList}>
+        <CategoriesList categories={categories} />
       </ul>
     </div>
   );

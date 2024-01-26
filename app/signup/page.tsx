@@ -6,6 +6,10 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
 import { toast, ToastContainer } from "react-toastify";
 import Spinner from "@/components/Spinner";
+import style from "../signin/signin.module.scss";
+import { IoClose } from "react-icons/io5";
+import { HiOutlineMail } from "react-icons/hi";
+import { FiLock } from "react-icons/fi";
 
 interface FirebaseAuthError extends Error {
   code: string;
@@ -51,40 +55,55 @@ const RegistrationPage: FC = () => {
   };
 
   return (
-    <div>
-      <Link href="/books/all">X</Link>
-      <h2>Sign up</h2>
+    <div className={style.formWrapper}>
+      <Link className={style.closeButton} href="/books/all">
+        <IoClose size={"28px"} />
+      </Link>
       <form onSubmit={handleSignUp}>
-        <div>
-          <label htmlFor="username">Username:</label>
+        <div className={style.formBox}>
           <input
+            className={style.input}
+            placeholder="name"
             id="username"
             type="text"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
+          <div className={style.inputIconBox}>
+            <input
+              className={style.input}
+              placeholder="email"
+              id="email"
+              type="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
+            />
+            <HiOutlineMail size={28} className={style.inputIcon} />
+          </div>
+          <div className={style.inputIconBox}>
+            <input
+              className={style.input}
+              placeholder="password"
+              id="password"
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+            />
+            <FiLock size={"28px"} className={style.inputIcon} />
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </div>
-        <button type="submit">Sign up</button>
+        <button className={style.submitButton} type="submit">
+          Sign up
+        </button>
       </form>
-      <Link href="/signin">Sign In</Link>
+      <div className={style.linkBox}>
+        <Link className={`${style.link} ${style.active}`} href="/signup">
+          Sign Up
+        </Link>
+        <Link className={style.link} href="/signin">
+          Sign In
+        </Link>
+      </div>
       <Spinner isLoading={isLoading} />
       <ToastContainer />
     </div>

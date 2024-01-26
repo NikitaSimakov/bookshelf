@@ -1,0 +1,110 @@
+.cardInfoContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.cardInfoWrapper {
+  height: 281px;
+}
+
+.cardInfoImage {
+  display: inline-block;
+  height: 281px;
+  width: 192px;
+  border-radius: 8px;
+  outline: 1px solid black;
+}
+
+.descriptionWrapper {
+  max-width: 279px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.04em;
+
+  color: var(--tertiary-text-color);
+
+  padding-bottom: 8px;
+}
+
+.author {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  color: #b4afaf;
+
+  padding-bottom: 20px;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.04em;
+
+  color: var(--tertiary-text-color);
+}
+
+.storesLinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+
+  padding-top: 20px;
+}
+
+.storeIcon {
+  transition-property: filter;
+  transition-duration: 250ms;
+  filter: grayscale(100%);
+  &:hover,
+  &:focus,
+  &Amazon:hover,
+  &Amazon:focus {
+    filter: var(--store-icons-hover);
+  }
+  &Amazon {
+    filter: var(--amazon-icon);
+  }
+}
+.shoppingButton {
+  height: 64px;
+  width: 100%;
+
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  background-color: var(--background-color);
+  color: var(--tertiary-text-color);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+
+  &:hover,
+  &:focus {
+    background-color: #4f2ee8;
+    color: #ffffff;
+  }
+}
+
+.removeText {
+  color: rgba(17, 17, 17, 0.5);
+  max-width: 324px;
+  margin: 0 auto;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  text-align: center;
+}

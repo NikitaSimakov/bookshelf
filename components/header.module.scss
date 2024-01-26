@@ -1,7 +1,70 @@
+.header {
+  border: 1.5px solid var(--tertiary-text-color);
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+  background-color: var(--header-background-color);
+}
+
+.headerContainer {
+  display: flex;
+}
+
+.nav {
+  display: flex;
+}
+
+.headerIcon {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 24px 0;
+  margin-right: 76px;
+}
+
+.headerTitle {
+  font-size: 19px;
+  font-weight: 500;
+  letter-spacing: -0.9px;
+  margin: 0;
+  color: var(--title-color);
+}
+
+.navLink {
+  text-transform: uppercase;
+  font-weight: 500;
+  line-height: 18px;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--tertiary-text-color);
+
+  &Active {
+    border-radius: 36px;
+    background-color: #eac645;
+    color: #111111;
+    padding: 8px 16px;
+    border-radius: 36px;
+    font-weight: 700;
+  }
+
+  &:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
+  }
+}
 .navList {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 15px;
-  list-style: none;
+  gap: 24px;
+}
+
+.userBarBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  gap: 24px;
+  margin-left: auto;
 }

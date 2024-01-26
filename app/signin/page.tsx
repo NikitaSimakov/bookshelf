@@ -7,6 +7,10 @@ import Link from "next/link";
 import { toast, ToastContainer } from "react-toastify";
 import GoogleButton from "@/components/GoogleButton";
 import Spinner from "@/components/Spinner";
+import { IoClose } from "react-icons/io5";
+import { HiOutlineMail } from "react-icons/hi";
+import { FiLock } from "react-icons/fi";
+import style from "./signin.module.scss";
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState("");
@@ -45,36 +49,54 @@ const SignIn: FC = () => {
   };
 
   return (
-    <div>
-      <Link href="/books/all">X</Link>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSignUp}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Password:</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </div>
-        <button type="submit">Sign in</button>
-      </form>
+    <>
+      <div className={style.formWrapper}>
+        <Link className={style.closeButton} href="/books/all">
+          <IoClose className={style.closeButtonIcon} size={"28px"} />
+        </Link>
+        <form onSubmit={handleSignUp}>
+          <div className={style.formBox}>
+            <div className={style.inputIconBox}>
+              <input
+                className={style.input}
+                placeholder="email"
+                id="email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+              <HiOutlineMail size={28} className={style.inputIcon} />
+            </div>
+            <div className={style.inputIconBox}>
+              <input
+                className={style.input}
+                placeholder="password"
+                id="password"
+                type="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+              <FiLock size={"28px"} className={style.inputIcon} />
+            </div>
+          </div>
+          <button className={style.submitButton} type="submit">
+            Sign in
+          </button>
+        </form>
 
-      <GoogleButton />
-      <Link href="/signup">Sign Up</Link>
-      <Spinner isLoading={isLoading} />
+        <GoogleButton />
+        <div className={style.linkBox}>
+          <Link className={style.link} href="/signup">
+            Sign Up
+          </Link>
+          <Link className={`${style.link} ${style.active}`} href="/signin">
+            Sign In
+          </Link>
+        </div>
+      </div>
       <ToastContainer />
-    </div>
+      <Spinner isLoading={isLoading} />
+    </>
   );
 };
 

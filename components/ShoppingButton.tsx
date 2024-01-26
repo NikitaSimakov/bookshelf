@@ -1,4 +1,5 @@
 import { useBooks } from "@/store/store";
+import style from "./CardInfo.module.scss";
 
 const ShoppingButton = ({ id }: { id: string | null }) => {
   const [shoppingList, book, setBook, removeBook] = useBooks((state) => [
@@ -9,11 +10,25 @@ const ShoppingButton = ({ id }: { id: string | null }) => {
   ]);
   const inShoppingList = shoppingList.some((book) => book?._id === id);
   return inShoppingList ? (
-    <button type="button" onClick={() => removeBook(id!)}>
-      Remove from the shopping list
-    </button>
+    <>
+      <button
+        className={style.shoppingButton}
+        type="button"
+        onClick={() => removeBook(id!)}
+      >
+        Remove from the shopping list
+      </button>
+      <p className={style.removeText}>
+        Сongratulations! You have added the book to the shopping list. To
+        delete, press the button “Remove from the shopping list”.
+      </p>
+    </>
   ) : (
-    <button type="button" onClick={() => setBook(book)}>
+    <button
+      className={style.shoppingButton}
+      type="button"
+      onClick={() => setBook(book)}
+    >
       Add to shopping list
     </button>
   );
