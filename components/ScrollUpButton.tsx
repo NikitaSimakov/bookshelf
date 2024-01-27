@@ -20,10 +20,9 @@ const ScrollUpButton = () => {
     if (!isBrowser) return;
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
   return (
     <>
-      {scroll > document.documentElement.clientHeight && (
+      {scroll > 700 && (
         <button className={style.scrollUpButton} onClick={scrollToTop}>
           <IoIosArrowDown className={style.scrollUpButtonIcon} />
         </button>
