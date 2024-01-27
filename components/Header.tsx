@@ -17,7 +17,6 @@ const Header: FC = () => {
         <Link className={style.headerIcon} href="/">
           <Image src={logo} alt="logo" />
           <h1 className={style.headerTitle}>Bookshelf</h1>
-          {/* <Image src={bookshelf} alt="bookshelf" /> */}
         </Link>
         <nav className={style.nav}>
           <ul className={style.navList}>

@@ -53,25 +53,6 @@ const CardInfo = () => {
                 widthOther={33}
                 heightOther={32}
               />
-              {/* <Link rel="noopener noreferrer" target="_blank" href={url}>
-                {name === "Amazon" ? (
-                  <Image
-                    className={style.storeIconAmazon}
-                    src={amazon}
-                    alt={name}
-                    width={62}
-                    height={16}
-                  />
-                ) : (
-                  <Image
-                    className={style.storeIcon}
-                    src={apple}
-                    alt={name}
-                    width={33}
-                    height={32}
-                  />
-                )}
-              </Link> */}
             </li>
           ))}
         </ul>
@@ -84,36 +65,3 @@ const CardInfo = () => {
 };
 
 export default CardInfo;
-
-// const CardInfo = async ({ id }: { id: string }) => {
-//   const book: IBook = await getBookById(id);
-//   console.log(book);
-//   const { title, author, description, book_image, buy_links } = book;
-//   const buyLinks = buy_links.filter(
-//     (link: { name: string; url: string }) =>
-//       link.name === "Amazon" ||
-//       link.name === "Apple" ||
-//       link.name === "Barnes and Noble"
-//   );
-
-//   const markup = (
-//     <div>
-//       <div>
-//         <Image src={book_image} alt={title} width={283} height={427} />
-//       </div>
-//       <div>
-//         <h3>{title}</h3>
-//         <p>{author}</p>
-//         <p>{description}</p>
-//         <div>
-//           {buyLinks.map(({ name, url }) => (
-//             <a key={url} href={url}>
-//               {name}
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-//     </div>
-//   );
-//   return markup;
-// };
