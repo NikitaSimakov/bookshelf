@@ -1,0 +1,21 @@
+.scrollUpButton {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  z-index: 1000;
+
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  border: none;
+  outline: solid 5px rgba(79, 46, 232, 0.3);
+  background-color: #4f2ee8;
+  &Icon {
+    transform: rotate(180deg);
+
+    width: 25px;
+    height: 25px;
+
+    fill: #ffffff;
+  }
+}

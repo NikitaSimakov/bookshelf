@@ -41,6 +41,7 @@
 .cardPopup {
   position: absolute;
   visibility: hidden;
+  opacity: 0;
   bottom: 0;
 
   width: 100%;
@@ -49,7 +50,7 @@
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
   transform: translateY(100%);
-  transition: opacity visible 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   &Text {
     padding: 26px 52px;
     width: 100%;
