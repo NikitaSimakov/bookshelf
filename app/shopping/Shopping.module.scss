@@ -8,14 +8,15 @@
 .rightbar {
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
+
   flex-basis: 100%;
-  // gap: 140px;
 }
 
 .shoppingList {
   margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .shoppingCardItem {

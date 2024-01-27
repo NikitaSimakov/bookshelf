@@ -8,6 +8,7 @@ import logo from "../public/icons/logo.svg";
 import bookshelf from "../public/icons/Bookshelf.svg";
 import Navigation from "./Navigation";
 import ThemeToggleBtn from "./ThemeToggleBtn";
+import ScrollUpButton from "./ScrollUpButton";
 
 const Header: FC = () => {
   return (
@@ -16,7 +17,6 @@ const Header: FC = () => {
         <Link className={style.headerIcon} href="/">
           <Image src={logo} alt="logo" />
           <h1 className={style.headerTitle}>Bookshelf</h1>
-          {/* <Image src={bookshelf} alt="bookshelf" /> */}
         </Link>
         <nav className={style.nav}>
           <ul className={style.navList}>
@@ -26,6 +26,7 @@ const Header: FC = () => {
         <div className={style.userBarBox}>
           <ThemeToggleBtn />
           <UserBar />
+          <ScrollUpButton />
         </div>
       </div>
     </header>
