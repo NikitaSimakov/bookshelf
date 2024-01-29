@@ -1,9 +1,22 @@
 .card {
-  width: 180px;
+  // width: 180px;
+  width: 335px;
   &:hover .cardPopup {
     transform: translatey(0);
     opacity: 1;
     visibility: visible;
+  }
+  @media screen and (min-width: 767px) {
+    width: 218px;
+    &:nth-child(n + 4) {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+    width: 180px;
+    &:nth-child(n + 4) {
+      display: block;
+    }
   }
 }
 .cardImageWrapper {
@@ -11,10 +24,19 @@
   width: 100%;
 }
 .cardImage {
-  height: 256px;
-  width: 180px;
+  height: 408px;
+  width: 287px;
   border-radius: 8px;
-  outline: 1px solid black;
+
+  @media screen and (min-width: 767px) {
+    height: 316px;
+    width: 218px;
+  }
+  @media screen and (min-width: 1440px) {
+    height: 256px;
+    width: 180px;
+  }
+  // outline: 1px solid black;
 }
 
 .title {

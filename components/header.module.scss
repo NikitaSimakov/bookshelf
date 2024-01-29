@@ -19,7 +19,12 @@
   flex-wrap: wrap;
   align-items: center;
   padding: 24px 0;
-  margin-right: 76px;
+  @media screen and (min-width: 767px) {
+    margin-right: 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 76px;
+  }
 }
 
 .headerTitle {
@@ -58,7 +63,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  @media screen and (min-width: 767px) {
+    gap: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 24px;
+  }
 }
 
 .userBarBox {

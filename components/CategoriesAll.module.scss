@@ -33,12 +33,20 @@
 
 .cardsList {
   display: flex;
-  column-gap: 24px;
-  row-gap: 40px;
+  // column-gap: 24px;
+  // row-gap: 40px;
   flex-wrap: wrap;
   list-style: none;
 
-  padding-bottom: 32px;
+  @media screen and (min-width: 767px) {
+    column-gap: 25px;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    column-gap: 24px;
+    row-gap: 40px;
+    padding-bottom: 32px;
+  }
 }
 
 .moreBtn {

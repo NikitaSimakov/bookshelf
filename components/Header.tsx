@@ -2,10 +2,10 @@ import { FC } from "react";
 
 import Link from "next/link";
 import UserBar from "./UserBar";
-import style from "./header.module.scss";
+import style from "./Header.module.scss";
 import Image from "next/image";
 import logo from "../public/icons/logo.svg";
-import bookshelf from "../public/icons/Bookshelf.svg";
+// import bookshelf from "../public/icons/Bookshelf.svg";
 import Navigation from "./Navigation";
 import ThemeToggleBtn from "./ThemeToggleBtn";
 import ScrollUpButton from "./ScrollUpButton";
