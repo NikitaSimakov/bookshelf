@@ -7,9 +7,6 @@ import ShoppingButton from "./ShoppingButton";
 import { filterLinks } from "@/services/helpers";
 import style from "./CardInfo.module.scss";
 import StoreIcon from "./StoreIcon";
-import amazon from "../public/store/amazon.svg";
-import apple from "../public/store/apple.svg";
-import Link from "next/link";
 
 const CardInfo = () => {
   const params = useSearchParams();

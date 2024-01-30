@@ -1,7 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { RiShoppingBagLine } from "react-icons/ri";
 import style from "./Header.module.scss";
 
