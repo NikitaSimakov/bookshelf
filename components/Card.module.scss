@@ -1,6 +1,6 @@
 .card {
-  // width: 180px;
   width: 335px;
+
   &:hover .cardPopup {
     transform: translatey(0);
     opacity: 1;
@@ -8,15 +8,9 @@
   }
   @media screen and (min-width: 767px) {
     width: 218px;
-    &:nth-child(n + 4) {
-      display: none;
-    }
   }
   @media screen and (min-width: 1440px) {
     width: 180px;
-    &:nth-child(n + 4) {
-      display: block;
-    }
   }
 }
 .cardImageWrapper {
@@ -24,8 +18,11 @@
   width: 100%;
 }
 .cardImage {
-  height: 408px;
-  width: 287px;
+  display: block;
+  height: 485px;
+  width: 335px;
+  // height: 408px;
+  // width: 287px;
   border-radius: 8px;
 
   @media screen and (min-width: 767px) {
@@ -67,7 +64,7 @@
   bottom: 0;
 
   width: 100%;
-  height: 73px;
+  height: 70px;
 
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;

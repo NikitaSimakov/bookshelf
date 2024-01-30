@@ -11,6 +11,12 @@ import { IoClose } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiLock } from "react-icons/fi";
 import style from "./signin.module.scss";
+import { injectStyle } from "react-toastify/dist/inject-style";
+
+// CALL IT ONCE IN YOUR APP
+if (typeof window !== "undefined") {
+  injectStyle();
+}
 
 const SignIn: FC = () => {
   const [email, setEmail] = useState("");
@@ -82,6 +88,7 @@ const SignIn: FC = () => {
           <button className={style.submitButton} type="submit">
             Sign in
           </button>
+          <ToastContainer />
         </form>
 
         <GoogleButton />
@@ -94,7 +101,7 @@ const SignIn: FC = () => {
           </Link>
         </div>
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
       <Spinner isLoading={isLoading} />
     </>
   );
