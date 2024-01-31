@@ -3,7 +3,7 @@ import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { RiShoppingBagLine } from "react-icons/ri";
-import style from "./Header.module.scss";
+import style from "./header.module.scss";
 
 const Navigation = () => {
   const navLinks = [

@@ -6,7 +6,7 @@ import logo from "../public/icons/logo.svg";
 import Navigation from "./Navigation";
 import ThemeToggleBtn from "./ThemeToggleBtn";
 import ScrollUpButton from "./ScrollUpButton";
-import style from "./Header.module.scss";
+import style from "./header.module.scss";
 
 const Header: FC = () => {
   return (
