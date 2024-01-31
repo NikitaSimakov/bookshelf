@@ -30,7 +30,7 @@ const CategoriesAll = ({ topBooks }: AllCategoriesProps) => {
       <h2 className={style.pageTitle}>
         Best Sellers <span>Books</span>
       </h2>
-      <ul>{bookCardMarkup}</ul>
+      <ul className={style.list}>{bookCardMarkup}</ul>
     </>
   );
 };

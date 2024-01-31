@@ -24,7 +24,7 @@ const VerticalSlider = () => {
         direction="vertical"
         loop={true}
         breakpoints={{
-          768: { slidesPerView: 6, slidesPerGroup: 1, rewind: true },
+          375: { slidesPerView: 6, slidesPerGroup: 1, rewind: true },
         }}
         slidesPerView={5}
       >

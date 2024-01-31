@@ -1,7 +1,8 @@
 .cardInfoContainer {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 40px;
 }
 
 .cardInfoWrapper {
@@ -13,7 +14,7 @@
   height: 281px;
   width: 192px;
   border-radius: 8px;
-  outline: 1px solid black;
+  // outline: 1px solid black;
 }
 
 .descriptionWrapper {

@@ -1,11 +1,39 @@
+// .list {
+// @media screen and (min-width: 767px) {
+//   &:nth-child(n + 4) {
+//     display: none;
+//   }
+// }
+// @media screen and (min-width: 1440px) {
+//   &:nth-child(n + 4) {
+//     display: block;
+//   }
+// }
+// & > li {
+//   @media screen and (min-width: 767px) {
+//     :nth-child(n + 4) {
+//       display: none;
+//     }
+//   }
+//   @media screen and (min-width: 1440px) {
+//     :nth-child(n + 4) {
+//       display: block;
+//     }
+//   }
+// }
+// }
+
 .pageTitle {
   font-size: 48px;
   font-weight: 700;
   line-height: 52px;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.05em;
   color: var(--tertiary-text-color);
 
   margin-bottom: 40px;
+  ///
+  ///
+
   & span {
     color: #4f2ee8;
   }
@@ -19,30 +47,64 @@
   &:first-child {
     margin-top: 0;
   }
+  & > ul > li {
+    &:nth-child(n + 2) {
+      display: none;
+    }
+    @media screen and (min-width: 767px) {
+      width: 218px;
+      &:nth-child(n + 2) {
+        display: block;
+      }
+      &:nth-child(n + 4) {
+        display: none;
+      }
+    }
+    @media screen and (min-width: 1440px) {
+      width: 180px;
+      &:nth-child(n) {
+        display: block;
+      }
+    }
+  }
 }
 
 .listTitle {
   font-size: 14px;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 18px;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #b4afaf;
   padding-bottom: 18px;
+  @media screen and (min-width: 767px) {
+    line-height: 24px;
+  }
 }
 
 .cardsList {
   display: flex;
-  column-gap: 24px;
+  // column-gap: 24px;
   row-gap: 40px;
+
   flex-wrap: wrap;
   list-style: none;
+  padding-bottom: 8px;
 
-  padding-bottom: 32px;
+  @media screen and (min-width: 767px) {
+    column-gap: 25px;
+    // row-gap: 40px;
+    padding-bottom: 20px;
+  }
+  @media screen and (min-width: 1440px) {
+    column-gap: 24px;
+
+    padding-bottom: 32px;
+  }
 }
 
 .moreBtn {
-  padding: 14px 28px;
+  padding: 12px 26px;
 
   font-size: 14px;
   font-weight: 700;

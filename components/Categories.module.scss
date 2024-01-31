@@ -2,26 +2,55 @@
   display: flex;
   margin-top: 40px;
   background-color: var(--background-color);
+  flex-wrap: wrap;
+  row-gap: 40px;
+  @media screen and (min-width: 767px) {
+    row-gap: 100px;
+  }
+  @media screen and (min-width: 1440px) {
+    flex-wrap: nowrap;
+    row-gap: unset;
+    column-gap: 40px;
+  }
 }
 
 .leftBar {
-  max-width: 356px;
+  max-width: 335px;
 
   display: flex;
   flex-direction: column;
   row-gap: 40px;
 
   background-color: var(--background-color);
+  @media screen and (min-width: 767px) {
+    max-width: 337px;
+    flex-direction: row;
+    gap: 32px;
+  }
+  @media screen and (min-width: 1440px) {
+    max-width: 356px;
+    flex-direction: column;
+    row-gap: 86px;
+  }
 }
 
 .rightBar {
-  padding-left: 40px;
+  @media screen and (min-width: 1440px) {
+    // padding-left: 40px;
+  }
 }
 
 .categoriesWrapper {
-  max-height: 472px;
-  min-width: 328px;
+  max-height: 228px;
+  min-width: 335px;
   overflow-y: scroll;
+  @media screen and (min-width: 767px) {
+    min-width: 337px;
+    max-height: 472px;
+  }
+  @media screen and (min-width: 1440px) {
+    min-width: 328px;
+  }
 }
 
 .categoriesList {
@@ -29,17 +58,32 @@
   flex-wrap: wrap;
   flex-direction: column;
   row-gap: 24px;
-  margin-right: 20px;
+  margin-right: 28px;
+  @media screen and (min-width: 767px) {
+    row-gap: 32px;
+  }
 }
 
 .listItem {
+  font-size: 16px;
   font-weight: 400;
-  font-size: 18px;
-  line-height: 24px;
+  line-height: 18px;
+  letter-spacing: -0.02em;
   color: var(--categories-list-item-color);
   &Active {
     font-weight: 700;
     text-transform: uppercase;
     color: #4f2ee8;
+  }
+  @media screen and (min-width: 767px) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    // color: var(--categories-list-item-color);
+    &Active {
+      font-weight: 700;
+      text-transform: uppercase;
+      color: #4f2ee8;
+    }
   }
 }

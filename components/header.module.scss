@@ -19,7 +19,12 @@
   flex-wrap: wrap;
   align-items: center;
   padding: 24px 0;
-  margin-right: 76px;
+  @media screen and (min-width: 767px) {
+    margin-right: 40px;
+  }
+  @media screen and (min-width: 1440px) {
+    margin-right: 76px;
+  }
 }
 
 .headerTitle {
@@ -36,6 +41,7 @@
   line-height: 18px;
   font-size: 14px;
   line-height: 18px;
+  letter-spacing: -0.04em;
   color: var(--tertiary-text-color);
 
   &Active {
@@ -58,7 +64,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 24px;
+  @media screen and (min-width: 767px) {
+    gap: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 24px;
+  }
 }
 
 .userBarBox {

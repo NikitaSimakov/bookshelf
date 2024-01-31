@@ -12,13 +12,15 @@
 
   position: relative;
   &SignIn {
-    gap: 90px;
     padding: 11px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
 
     color: #ffffff;
+    @media screen and (min-width: 767px) {
+      gap: 90px;
+    }
   }
 }
 
