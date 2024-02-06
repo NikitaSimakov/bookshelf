@@ -16,12 +16,16 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media screen and (max-width: 767px) {
+    width: 335px;
+    padding: 40px 24px;
+  }
   width: 579px;
 
   background-color: var(--background-color);
 
   border-radius: 18px;
-  border: 1px solid var(--tertiary-text-color);
+  border: 2px solid var(--tertiary-text-color);
   padding: 40px;
 
   display: flex;
@@ -33,6 +37,10 @@
 }
 
 .closeButton {
+  @media screen and (max-width: 767px) {
+    top: 9px;
+    right: 9px;
+  }
   position: absolute;
   top: 20px;
   right: 20px;

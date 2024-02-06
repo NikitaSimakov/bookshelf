@@ -1,16 +1,23 @@
 .cardInfoContainer {
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
   row-gap: 40px;
 }
 
-.cardInfoWrapper {
-  height: 281px;
-}
+// .cardInfoWrapper {
+//   height: 281px;
+// }
 
 .cardInfoImage {
   display: inline-block;
+  @media screen and (max-width: 767px) {
+    width: 287px;
+    height: 408px;
+  }
   height: 281px;
   width: 192px;
   border-radius: 8px;
@@ -18,10 +25,19 @@
 }
 
 .descriptionWrapper {
+  @media screen and (max-width: 767px) {
+    padding-top: 14px;
+    padding-bottom: 44px;
+  }
   max-width: 279px;
 }
 
 .title {
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 18px;
+    padding-bottom: 4px;
+  }
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
@@ -33,6 +49,9 @@
 }
 
 .author {
+  @media screen and (max-width: 767px) {
+    padding-bottom: 18px;
+  }
   font-size: 14px;
   font-style: italic;
   font-weight: 400;
@@ -77,8 +96,20 @@
   }
 }
 .shoppingButton {
+  @media screen and (max-width: 767px) {
+    display: block;
+    height: 46px;
+    min-width: 211px;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
   height: 64px;
   width: 100%;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
 
   border-radius: 40px;
   border: 2px solid #4f2ee8;
@@ -99,6 +130,10 @@
 }
 
 .removeText {
+  @media screen and (max-width: 767px) {
+    padding-top: 8px;
+  }
+
   color: rgba(17, 17, 17, 0.5);
   max-width: 324px;
   margin: 0 auto;
