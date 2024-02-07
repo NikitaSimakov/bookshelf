@@ -1,0 +1,27 @@
+.menuButton {
+  display: none;
+  @media screen and (max-width: 767px) {
+    display: block;
+    background: inherit;
+    border: none;
+  }
+
+  .closeIcon {
+    display: none;
+  }
+  &Active {
+    .menuIcon {
+      display: none;
+    }
+    .closeIcon {
+      display: block;
+    }
+  }
+}
+
+.menuIcon {
+  & > svg {
+    width: 13.29px;
+    height: 13.29px;
+  }
+}
