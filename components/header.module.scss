@@ -3,6 +3,10 @@
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
   background-color: var(--header-background-color);
+
+  @media screen and (max-width: 767px) {
+    position: relative;
+  }
 }
 
 .headerContainer {
@@ -11,6 +15,13 @@
 
 .nav {
   display: flex;
+  @media screen and (max-width: 767px) {
+    position: absolute;
+    top: 247px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+  }
 }
 
 .headerIcon {
@@ -19,7 +30,7 @@
   flex-wrap: wrap;
   align-items: center;
   padding: 24px 0;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     margin-right: 40px;
   }
   @media screen and (min-width: 1440px) {
@@ -35,6 +46,27 @@
   color: var(--title-color);
 }
 
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  @media screen and (max-width: 767px) {
+    display: none;
+    &Active {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      row-gap: 16px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    gap: 16px;
+  }
+  @media screen and (min-width: 1440px) {
+    gap: 24px;
+  }
+}
+
 .navLink {
   text-transform: uppercase;
   font-weight: 500;
@@ -43,6 +75,9 @@
   line-height: 18px;
   letter-spacing: -0.04em;
   color: var(--tertiary-text-color);
+  @media screen and (max-width: 767px) {
+    color: #fff;
+  }
 
   &Active {
     border-radius: 36px;
@@ -60,25 +95,11 @@
     align-items: center;
   }
 }
-.navList {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-  @media screen and (min-width: 767px) {
-    gap: 16px;
-  }
-  @media screen and (min-width: 1440px) {
-    gap: 24px;
-  }
-}
 
 .userBarBox {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  gap: 24px;
-  margin-left: auto;
+  // gap: 24px;
+  // margin-left: auto;
 }

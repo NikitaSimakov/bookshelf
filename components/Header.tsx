@@ -23,8 +23,8 @@ const Header: FC = () => {
               <Navigation />
             </ul>
           </nav>
+          <ThemeToggleBtn />
           <div className={style.userBarBox}>
-            <ThemeToggleBtn />
             <UserBar />
             <ScrollUpButton />
             <Menu />
