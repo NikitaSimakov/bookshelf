@@ -4,7 +4,7 @@ import { HiMenuAlt1, HiX } from "react-icons/hi";
 import style from "./Menu.module.scss";
 import headerstyle from "./header.module.scss";
 import userstyle from "./userBar.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +21,6 @@ const Menu = () => {
     typeof document !== "undefined"
       ? document.getElementsByClassName(`${userstyle.userBarWrapper}`)[0]
       : null;
-  // console.log(userBarWrapper);
 
   return (
     <>
@@ -39,11 +38,7 @@ const Menu = () => {
         <HiMenuAlt1 size={20} className={style.menuIcon} />
         <HiX size={20} className={style.closeIcon} />
       </button>
-      {isOpen && (
-        <div className={style.menuWrapper}>
-          <p>Menu</p>
-        </div>
-      )}
+      {isOpen && <div className={style.menuWrapper}></div>}
     </>
   );
 };

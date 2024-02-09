@@ -48,7 +48,7 @@ const UserBar = () => {
           }}
         >
           Sign In
-          <IoArrowForwardSharp stroke="#EAC645" />
+          <IoArrowForwardSharp className={style.pointer} stroke="#EAC645" />
         </Link>
       )}
     </div>
