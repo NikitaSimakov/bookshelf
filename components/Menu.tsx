@@ -8,35 +8,52 @@ import { useEffect, useState } from "react";
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const menuButton =
-    typeof document !== "undefined"
-      ? document?.getElementById("menuButton")
-      : null;
-  const btnCls = menuButton?.classList.value;
-  const navList =
-    typeof document !== "undefined"
-      ? document.getElementsByClassName(`${headerstyle.navList}`)[0]
-      : null;
-  const userBarWrapper =
-    typeof document !== "undefined"
-      ? document.getElementsByClassName(`${userstyle.userBarWrapper}`)[0]
-      : null;
+
+  useEffect(() => {
+    const menuButton = document?.getElementById("menuButton");
+    const navList = document.getElementsByClassName(
+      `${headerstyle.navList}`
+    )[0];
+    const userBarWrapper = document.getElementsByClassName(
+      `${userstyle.userBarWrapper}`
+    )[0];
+    const addClassname = () => {
+      menuButton?.classList.add(`${style.menuButtonActive}`);
+      navList?.classList.add(`${headerstyle.navListActive}`);
+      userBarWrapper?.classList.add(`${userstyle.userBarWrapperActive}`);
+      document.body?.classList.add("hidden");
+    };
+    const removeClassname = () => {
+      menuButton?.classList.remove(`${style.menuButtonActive}`);
+      navList?.classList.remove(`${headerstyle.navListActive}`);
+      userBarWrapper?.classList.remove(`${userstyle.userBarWrapperActive}`);
+      document.body?.classList.remove("hidden");
+    };
+
+    if (isOpen) addClassname();
+    if (!isOpen) removeClassname();
+  }, [isOpen]);
 
   return (
     <>
-      <button
-        id="menuButton"
-        onClick={() => {
-          menuButton?.classList.toggle(`${style.menuButtonActive}`);
-          navList?.classList.toggle(`${headerstyle.navListActive}`);
-          userBarWrapper?.classList.toggle(`${userstyle.userBarWrapperActive}`);
-          setIsOpen(!isOpen);
-          document.body?.classList.toggle("hidden");
-        }}
-        className={style.menuButton}
-      >
-        <HiMenuAlt1 size={20} className={style.menuIcon} />
-        <HiX size={20} className={style.closeIcon} />
+      <button id="menuButton" className={style.menuButton}>
+        {isOpen ? (
+          <HiX
+            onClick={() => {
+              setIsOpen(false);
+            }}
+            size={20}
+            className={style.closeIcon}
+          />
+        ) : (
+          <HiMenuAlt1
+            onClick={() => {
+              setIsOpen(true);
+            }}
+            size={20}
+            className={style.menuIcon}
+          />
+        )}
       </button>
       {isOpen && <div className={style.menuWrapper}></div>}
     </>

@@ -1,5 +1,6 @@
 .menuButton {
   display: none;
+  color: var(--tertiary-text-color);
   @media screen and (max-width: 767px) {
     display: block;
     background: inherit;
@@ -35,5 +36,10 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%);
+
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: contain;
+  background-image: url("../public//mobilemenu/books.svg"),
+    radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4f2ee8 18.03%, #ffffff 100%);
 }
