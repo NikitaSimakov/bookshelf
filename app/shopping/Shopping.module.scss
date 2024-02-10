@@ -4,6 +4,11 @@
   @media screen and (min-width: 768px) {
     display: flex;
   }
+  @media screen and (max-width: 1439px) {
+    & section {
+      display: none;
+    }
+  }
   @media screen and (min-width: 1440px) {
     gap: 40px;
   }
