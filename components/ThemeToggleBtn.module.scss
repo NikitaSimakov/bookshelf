@@ -1,67 +1,10 @@
-// .toggleContainer {
-//   // position: relative;
-//   // top: 2em;
-//   // right: 2em;
-//   position: relative;
-//   display: flex;
-//   align-content: center;
-//   // width: 40px;
-//   // height: 20px;
-//   // background: var(--toggle-bg);
-//   // border-radius: 50px;
-// }
-
-// .toggle {
-//   visibility: hidden;
-//   display: none;
-// }
-
-// .toggle + label {
-//   display: flex;
-//   align-items: center;
-//   // font-size: 1.5em;
-//   cursor: pointer;
-//   color: var(--primary-text-color);
-// }
-
-// .toggle + label::before {
-//   content: "";
-//   height: 20px;
-//   width: 40px;
-//   border-radius: 15px;
-//   background: var(--toggle-bg);
-//   // margin-right: 0.5em;
-//   transition: background-color 250ms ease-in-out;
-// }
-
-// .toggle + label::after {
-//   content: "";
-//   height: 18px;
-//   width: 18px;
-//   border-radius: 50%;
-//   background: linear-gradient(#ffffff, #f7f7f7);
-//   position: absolute;
-//   left: 2px;
-//   transition:
-//     background-color 250ms ease-in-out,
-//     transform 250ms ease-in-out;
-// }
-
-// .toggle:checked + label::after {
-//   transform: translateX(100%);
-// }
-
-//////
-///
-///
-// .light {
-//   background-color: var(--background-color);
-// }
-
 .toggleContainer {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
+
+  margin-right: 24px;
+  margin-left: auto;
 }
 
 .toggleWrapper {

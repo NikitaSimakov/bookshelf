@@ -13,7 +13,6 @@ import { FiLock } from "react-icons/fi";
 import style from "./signin.module.scss";
 import { injectStyle } from "react-toastify/dist/inject-style";
 
-// CALL IT ONCE IN YOUR APP
 if (typeof window !== "undefined") {
   injectStyle();
 }

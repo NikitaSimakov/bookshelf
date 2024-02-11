@@ -57,7 +57,7 @@ const RegistrationPage: FC = () => {
   return (
     <div className={style.formWrapper}>
       <Link className={style.closeButton} href="/books/all">
-        <IoClose size={"28px"} />
+        <IoClose size={"28px"} className={style.closeButtonIcon} />
       </Link>
       <form onSubmit={handleSignUp}>
         <div className={style.formBox}>

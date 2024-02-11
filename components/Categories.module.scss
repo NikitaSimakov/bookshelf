@@ -4,7 +4,7 @@
   background-color: var(--background-color);
   flex-wrap: wrap;
   row-gap: 40px;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     row-gap: 100px;
   }
   @media screen and (min-width: 1440px) {
@@ -22,7 +22,7 @@
   row-gap: 40px;
 
   background-color: var(--background-color);
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     max-width: 337px;
     flex-direction: row;
     gap: 32px;
@@ -44,7 +44,7 @@
   max-height: 228px;
   min-width: 335px;
   overflow-y: scroll;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     min-width: 337px;
     max-height: 472px;
   }
@@ -59,7 +59,7 @@
   flex-direction: column;
   row-gap: 24px;
   margin-right: 28px;
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     row-gap: 32px;
   }
 }
@@ -75,7 +75,7 @@
     text-transform: uppercase;
     color: #4f2ee8;
   }
-  @media screen and (min-width: 767px) {
+  @media screen and (min-width: 768px) {
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;

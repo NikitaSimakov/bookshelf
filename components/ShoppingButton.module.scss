@@ -1,0 +1,64 @@
+.shoppingButton {
+  @media screen and (max-width: 767px) {
+    display: block;
+    height: 46px;
+    max-width: fit-content;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    white-space: nowrap;
+
+    font-size: 14px;
+    line-height: 18px;
+  }
+  height: 64px;
+  width: 100%;
+
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  background-color: var(--background-color);
+  color: var(--tertiary-text-color);
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition-property: background-color, color;
+  transition-duration: 250ms;
+
+  &:hover,
+  &:focus {
+    background-color: #4f2ee8;
+    color: #ffffff;
+  }
+}
+
+.removeText {
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  animation: fade-in 500ms ease;
+  @media screen and (max-width: 767px) {
+    padding-top: 8px;
+  }
+
+  color: rgba(17, 17, 17, 0.5);
+  max-width: 324px;
+  margin: 0 auto;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.04em;
+  text-align: center;
+
+  transition: opacity 0.5s ease-in;
+}

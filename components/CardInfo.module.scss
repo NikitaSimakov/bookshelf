@@ -1,27 +1,42 @@
 .cardInfoContainer {
+  @media screen and (max-width: 767px) {
+    display: block;
+  }
   display: flex;
   flex-wrap: wrap;
   column-gap: 24px;
   row-gap: 40px;
 }
 
-.cardInfoWrapper {
-  height: 281px;
-}
+// .cardInfoWrapper {
+//   height: 281px;
+// }
 
 .cardInfoImage {
   display: inline-block;
+  @media screen and (max-width: 767px) {
+    width: 287px;
+    height: 408px;
+  }
   height: 281px;
   width: 192px;
   border-radius: 8px;
-  // outline: 1px solid black;
 }
 
 .descriptionWrapper {
+  @media screen and (max-width: 767px) {
+    padding-top: 14px;
+    padding-bottom: 44px;
+  }
   max-width: 279px;
 }
 
 .title {
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+    line-height: 18px;
+    padding-bottom: 4px;
+  }
   font-size: 24px;
   font-weight: 700;
   line-height: 28px;
@@ -33,6 +48,9 @@
 }
 
 .author {
+  @media screen and (max-width: 767px) {
+    padding-bottom: 18px;
+  }
   font-size: 14px;
   font-style: italic;
   font-weight: 400;
@@ -75,37 +93,4 @@
   &Amazon {
     filter: var(--amazon-icon);
   }
-}
-.shoppingButton {
-  height: 64px;
-  width: 100%;
-
-  border-radius: 40px;
-  border: 2px solid #4f2ee8;
-  background-color: var(--background-color);
-  color: var(--tertiary-text-color);
-  text-transform: uppercase;
-
-  cursor: pointer;
-
-  transition-property: background-color, color;
-  transition-duration: 250ms;
-
-  &:hover,
-  &:focus {
-    background-color: #4f2ee8;
-    color: #ffffff;
-  }
-}
-
-.removeText {
-  color: rgba(17, 17, 17, 0.5);
-  max-width: 324px;
-  margin: 0 auto;
-
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 14px;
-  letter-spacing: -0.04em;
-  text-align: center;
 }

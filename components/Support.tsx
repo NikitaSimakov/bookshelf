@@ -26,7 +26,7 @@ const VerticalSlider = () => {
         breakpoints={{
           375: { slidesPerView: 6, slidesPerGroup: 1, rewind: true },
         }}
-        slidesPerView={5}
+        // slidesPerView={5}
       >
         {supportList.map(({ id, name, width, height, src, link }, index) => (
           <SwiperSlide className="support-item" key={id}>
