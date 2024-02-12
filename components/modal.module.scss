@@ -9,19 +9,11 @@
   position: fixed;
   z-index: 999;
   background-color: rgba(17, 17, 17, 0.4);
+
+  overflow-y: scroll;
 }
 
 .modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  @media screen and (max-width: 767px) {
-    width: 335px;
-    padding: 40px 24px;
-  }
-  width: 579px;
-
   background-color: var(--background-color);
 
   border-radius: 18px;
@@ -34,13 +26,26 @@
   &:last-child button {
     margin: 0 auto;
   }
+
+  @media screen and (max-width: 767px) {
+    position: relative;
+
+    margin: 50px auto 50px;
+
+    width: 335px;
+    padding: 40px 24px;
+  }
+
+  @media screen and (min-width: 768px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 579px;
+  }
 }
 
 .closeButton {
-  @media screen and (max-width: 767px) {
-    top: 9px;
-    right: 9px;
-  }
   position: absolute;
   top: 20px;
   right: 20px;
@@ -61,6 +66,11 @@
 
   transition-property: color;
   transition-duration: 250ms;
+
+  @media screen and (max-width: 767px) {
+    top: 9px;
+    right: 9px;
+  }
 
   &:hover,
   &:focus {
