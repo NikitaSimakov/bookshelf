@@ -40,7 +40,7 @@ const CardInfo = () => {
           {description || "No more information about this book"}
         </p>
         <ul className={style.storesLinks}>
-          {buyLinks.map(({ name, url }) => (
+          {buyLinks?.map(({ name, url }) => (
             <li key={url}>
               <StoreIcon
                 name={name}
