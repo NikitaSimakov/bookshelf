@@ -1,7 +1,6 @@
 import React from "react";
 import { ThreeDots } from "react-loader-spinner";
 import style from "./Spinner.module.scss";
-// import "react-toastify/dist/ReactToastify.css";
 
 interface SpinnerProps {
   isLoading: boolean;

@@ -8,9 +8,24 @@ interface UseBooks {
   shoppingList: IBook[];
   book: IBook;
   setBook: (id: string) => void;
+  resetBook: () => void;
   setBookToShoppingList: (book: IBook) => void;
   removeFromShoppingList: (id: string) => void;
 }
+
+const initState = {
+  error: null,
+  shoppingList: [],
+  book: {
+    _id: "",
+    title: "",
+    author: "",
+    description: "",
+    book_image: "",
+    list_name: "",
+    buy_links: [{ name: "", url: "" }],
+  },
+};
 
 export const useBooks = createWithEqualityFn<UseBooks>()(
   persist(
@@ -30,6 +45,11 @@ export const useBooks = createWithEqualityFn<UseBooks>()(
         const book = await getBookById(id);
         set((state) => (state.book = book));
       },
+      resetBook: () =>
+        set((state) => ({
+          ...state,
+          book: initState.book,
+        })),
       setBookToShoppingList: (book) =>
         set((state) => ({
           shoppingList: [...state.shoppingList, book],

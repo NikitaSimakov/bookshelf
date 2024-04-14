@@ -10,7 +10,6 @@ const ShoppingLayout = ({ children }: { children: React.ReactNode }) => {
         <div className={style.leftbar}>
           <Support />
         </div>
-
         <div className={style.rightbar}>{children}</div>
       </div>
     </>

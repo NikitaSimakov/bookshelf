@@ -1,8 +1,6 @@
-import { IBooks, ICard } from "@/types/types";
+import { IBooks } from "@/types/types";
 import { getTopBooks } from "@/services/getBooks";
-// import Card from "@/components/Card";
 import Modal from "@/components/Modal";
-// import Link from "next/link";
 import { Metadata } from "next";
 import CategoriesAll from "@/components/CategoriesAll";
 
@@ -16,13 +14,7 @@ const Books = async () => {
   return (
     <section>
       <Modal />
-      {/* <h2>
-        Best Sellers <span>Books</span>
-      </h2>
-      <ul> */}
       <CategoriesAll topBooks={topBooks} />
-      {/* </ul> */}
-      {/* <ul>{bookCardMarkup}</ul> */}
     </section>
   );
 };

@@ -4,12 +4,21 @@ import { MouseEvent, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
 import CardInfo from "./CardInfo";
 import style from "./modal.module.scss";
+import { useBooks } from "@/store/store";
 
 const Modal = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const id = searchParams!.get("modal");
   const pathname = usePathname()!;
+  const resetBook = useBooks((state) => state.resetBook);
+
+  const handleCloseModal = () => {
+    router.push(!pathname ? "/books/all" : pathname, {
+      scroll: false,
+    });
+    resetBook();
+  };
 
   useEffect(() => {
     id && document.body?.classList.add("hidden");
@@ -18,12 +27,9 @@ const Modal = () => {
 
   useEffect(() => {
     const onEscModalClose = (event: KeyboardEventInit) => {
-      if (event.key === "Escape") {
-        router.push(!pathname ? "/books/all" : pathname, {
-          scroll: false,
-        });
-      }
+      if (event.key === "Escape") handleCloseModal();
     };
+
     id && window.addEventListener("keydown", onEscModalClose);
     return () => {
       window.removeEventListener("keydown", onEscModalClose);
@@ -33,23 +39,15 @@ const Modal = () => {
   const onEscTapHandler = (
     event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>
   ) => {
-    if (event.target === event.currentTarget)
-      router.push(!pathname ? "/books/all" : pathname, {
-        scroll: false,
-      });
+    if (event.target === event.currentTarget) {
+      handleCloseModal();
+    }
   };
 
   const dialog: JSX.Element | null = id ? (
     <div onClick={(event) => onEscTapHandler(event)} className={style.overlay}>
       <dialog className={style.modal}>
-        <button
-          className={style.closeButton}
-          onClick={() =>
-            router.push(!pathname ? "/books/all" : pathname, {
-              scroll: false,
-            })
-          }
-        >
+        <button className={style.closeButton} onClick={handleCloseModal}>
           <IoClose className={style.closeIcon} />
         </button>
         <CardInfo />

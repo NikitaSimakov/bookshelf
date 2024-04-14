@@ -7,19 +7,17 @@ import ShoppingButton from "./ShoppingButton";
 import { filterLinks } from "@/services/helpers";
 import style from "./CardInfo.module.scss";
 import StoreIcon from "./StoreIcon";
-
+import SceletonCardInfo from "./SceletonCardInfo";
 const CardInfo = () => {
   const params = useSearchParams();
   const id = params!.get("modal");
 
   const [setBook, book] = useBooks((state) => [state.setBook, state.book]);
-
   useEffect(() => {
     setBook(id!);
   }, [id, setBook]);
 
-  const { title, author, description, book_image, buy_links } = book;
-
+  const { title, author, description, book_image, buy_links, _id } = book;
   const buyLinks = filterLinks(buy_links);
   const markup = (
     <div className={style.cardInfoContainer}>
@@ -58,7 +56,7 @@ const CardInfo = () => {
       <ShoppingButton id={id} />
     </div>
   );
-  return markup;
+  return _id ? markup : <SceletonCardInfo />;
 };
 
 export default CardInfo;
