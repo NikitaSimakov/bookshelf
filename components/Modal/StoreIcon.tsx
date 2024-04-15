@@ -1,6 +1,6 @@
-import style from "./CardInfo.module.scss";
-import amazon from "../public/store/amazon.svg";
-import apple from "../public/store/apple.svg";
+import style from "../Card/CardInfo.module.scss";
+import amazon from "../../public/store/amazon.svg";
+import apple from "../../public/store/apple.svg";
 import Link from "next/link";
 import Image from "next/image";
 

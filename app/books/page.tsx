@@ -1,8 +1,8 @@
 import { IBooks } from "@/types/types";
 import { getTopBooks } from "@/services/getBooks";
-import Modal from "@/components/Modal";
+import Modal from "@/components/Modal/Modal";
 import { Metadata } from "next";
-import CategoriesAll from "@/components/CategoriesAll";
+import CategoriesAll from "@/components/Categories/CategoriesAll";
 
 export const metadata: Metadata = {
   title: "Bookshelf | All books",

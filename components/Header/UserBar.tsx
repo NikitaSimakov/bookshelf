@@ -5,7 +5,7 @@ import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoArrowForwardSharp } from "react-icons/io5";
-import userDefImg from "../public/user/user.svg";
+import userDefImg from "../../public/user/user.svg";
 import style from "./userBar.module.scss";
 
 const UserBar = () => {

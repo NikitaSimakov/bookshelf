@@ -5,7 +5,6 @@ import Image from "next/image";
 import { filterLinks } from "@/services/helpers";
 import { BsTrash3Fill } from "react-icons/bs";
 import style from "../app/shopping/Shopping.module.scss";
-import StoreIcon from "./StoreIcon";
 import { ShoppingListItem } from "./ShoppingListItem";
 import { ShoppingPaginationBlock } from "./ShoppingListPaginationBlock";
 

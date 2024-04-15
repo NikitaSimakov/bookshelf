@@ -1,8 +1,8 @@
-import Card from "@/components/Card";
-import Modal from "@/components/Modal";
+import Card from "@/components/Card/Card";
+import Modal from "@/components/Modal/Modal";
 import { getBooksByCategory } from "@/services/getBooks";
 import { ICard } from "@/types/types";
-import style from "../../../components/CategoriesAll.module.scss";
+import style from "../../../components/Categories/CategoriesAll.module.scss";
 
 interface ICategory {
   params: {

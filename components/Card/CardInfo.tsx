@@ -3,11 +3,12 @@ import { useBooks } from "@/store/store";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
-import ShoppingButton from "./ShoppingButton";
+import ShoppingButton from "../Button/ShoppingButton";
 import { filterLinks } from "@/services/helpers";
 import style from "./CardInfo.module.scss";
-import StoreIcon from "./StoreIcon";
-import SceletonCardInfo from "./SceletonCardInfo";
+import StoreIcon from "../Modal/StoreIcon";
+import SceletonCardInfo from "../Sceleton/SceletonCardInfo";
+
 const CardInfo = () => {
   const params = useSearchParams();
   const id = params!.get("modal");

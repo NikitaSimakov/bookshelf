@@ -1,7 +1,7 @@
-import Categories from "@/components/Categories";
-import Header from "@/components/Header";
-import style from "../../components/Categories.module.scss";
-import Support from "@/components/Support";
+import Categories from "@/components/Categories/Categories";
+import Header from "@/components/Header/Header";
+import Support from "@/components/Slider/Support";
+import style from "../../components/Categories/Categories.module.scss";
 
 const BooksLayout = ({ children }: { children: React.ReactNode }) => {
   return (

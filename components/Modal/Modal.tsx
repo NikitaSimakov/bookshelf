@@ -2,7 +2,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { MouseEvent, useEffect } from "react";
 import { IoClose } from "react-icons/io5";
-import CardInfo from "./CardInfo";
+import CardInfo from "../Card/CardInfo";
 import style from "./modal.module.scss";
 import { useBooks } from "@/store/store";
 

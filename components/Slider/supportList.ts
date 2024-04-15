@@ -1,12 +1,12 @@
-import Planeta from "../public/support/Grupo_Planeta_logo.svg";
-import Hachette from "../public/support/Logo_Hachette_Livre_Actuel.svg";
-import Scholastic from "../public/support/Logo_Scholastic.svg";
-import McGraw from "../public/support/McGraw-Hill_Education_(jusqu'en_2013).svg";
-import Pearson from "../public/support/Pearson_logo.svg";
-import Penguin from "../public/support/Penguin_Random_House_201x_logo.svg";
-import Reed from "../public/support/Reed_Elsevier_Logo.svg";
-import Thomson from "../public/support/Thomson_Reuters_logo.svg";
-import Wolters from "../public/support/Wolters_Kluwer_Logo.svg";
+import Planeta from "../../public/support/Grupo_Planeta_logo.svg";
+import Hachette from "../../public/support/Logo_Hachette_Livre_Actuel.svg";
+import Scholastic from "../../public/support/Logo_Scholastic.svg";
+import McGraw from "../../public/support/McGraw-Hill_Education_(jusqu'en_2013).svg";
+import Pearson from "../../public/support/Pearson_logo.svg";
+import Penguin from "../../public/support/Penguin_Random_House_201x_logo.svg";
+import Reed from "../../public/support/Reed_Elsevier_Logo.svg";
+import Thomson from "../../public/support/Thomson_Reuters_logo.svg";
+import Wolters from "../../public/support/Wolters_Kluwer_Logo.svg";
 
 const supportList = [
   {

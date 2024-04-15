@@ -2,12 +2,12 @@ import { FC } from "react";
 import Link from "next/link";
 import UserBar from "./UserBar";
 import Image from "next/image";
-import logo from "../public/icons/logo.svg";
+import logo from "../../public/icons/logo.svg";
 import Navigation from "./Navigation";
-import ThemeToggleBtn from "./ThemeToggleBtn";
-import ScrollUpButton from "./ScrollUpButton";
 import style from "./header.module.scss";
 import Menu from "./Menu";
+import ThemeToggleBtn from "../Button/ThemeToggleBtn";
+import ScrollUpButton from "../Button/ScrollUpButton";
 
 const Header: FC = () => {
   return (
