@@ -5,7 +5,7 @@ import Link from "next/link";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../firebase";
 import { toast, ToastContainer } from "react-toastify";
-import Spinner from "@/components/Spinner";
+import Spinner from "@/components/Loading/Spinner";
 import style from "../signin/signin.module.scss";
 import { IoClose } from "react-icons/io5";
 import { HiOutlineMail } from "react-icons/hi";

@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Support from "@/components/Support";
+import Header from "@/components/Header/Header";
+import Support from "@/components/Slider/Support";
 import style from "./Shopping.module.scss";
 
 const ShoppingLayout = ({ children }: { children: React.ReactNode }) => {
