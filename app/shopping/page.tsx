@@ -1,4 +1,4 @@
-import ShoppingList from "@/components/ShoppingList";
+import ShoppingList from "@/components/ShoppingList/ShoppingList";
 import { Metadata } from "next";
 import style from "./Shopping.module.scss";
 

@@ -4,7 +4,7 @@ import { useLayoutEffect, useState } from "react";
 import Image from "next/image";
 import { filterLinks } from "@/services/helpers";
 import { BsTrash3Fill } from "react-icons/bs";
-import style from "../app/shopping/Shopping.module.scss";
+import style from "../../app/shopping/Shopping.module.scss";
 import { ShoppingListItem } from "./ShoppingListItem";
 import { ShoppingPaginationBlock } from "./ShoppingListPaginationBlock";
 
@@ -47,19 +47,19 @@ const ShoppingList = () => {
     return shoppingItems;
   };
 
-  const shoppingItems = shoppingList?.map(
-    ({ _id, book_image, title, author, list_name, description, buy_links }) =>
-      ShoppingListItem({
-        _id,
-        book_image,
-        title,
-        author,
-        list_name,
-        description,
-        buy_links,
-        removeBook,
-      })
-  );
+  // const shoppingItems = shoppingList?.map(
+  //   ({ _id, book_image, title, author, list_name, description, buy_links }) =>
+  //     ShoppingListItem({
+  //       _id,
+  //       book_image,
+  //       title,
+  //       author,
+  //       list_name,
+  //       description,
+  //       buy_links,
+  //       removeBook,
+  //     })
+  // );
   return isLayoutReady && shoppingList.length !== 0 ? (
     <ul className={style.shoppingList}>
       {paginatePages(page)}

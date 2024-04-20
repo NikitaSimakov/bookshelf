@@ -1,0 +1,18 @@
+.pageTitle {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -0.05em;
+  color: var(--tertiary-text-color);
+
+  margin-bottom: 40px;
+  ///
+  ///
+
+  & span {
+    color: #4f2ee8;
+  }
+  @media screen and (min-width: 768px) {
+    font-size: 48px;
+  }
+}

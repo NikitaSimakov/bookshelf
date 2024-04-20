@@ -25,14 +25,7 @@ const CategoriesAll = ({ topBooks }: AllCategoriesProps) => {
       </li>
     );
   });
-  return (
-    <>
-      <h2 className={style.pageTitle}>
-        Best Sellers <span>Books</span>
-      </h2>
-      <ul className={style.list}>{bookCardMarkup}</ul>
-    </>
-  );
+  return <ul className={style.list}>{bookCardMarkup}</ul>;
 };
 
 export default CategoriesAll;

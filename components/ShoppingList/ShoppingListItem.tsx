@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { filterLinks } from "@/services/helpers";
-import style from "../app/shopping/Shopping.module.scss";
 import { BsTrash3Fill } from "react-icons/bs";
-import StoreIcon from "./StoreIcon";
+import StoreIcon from "../Modal/StoreIcon";
+import style from "../../app/shopping/Shopping.module.scss";
 
 interface ShoppingListItemProps {
   _id: string;
