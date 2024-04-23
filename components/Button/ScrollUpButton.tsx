@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { useSearchParams } from "next/navigation";
 import style from "./ScrollUpButton.module.scss";
 
 const ScrollUpButton = () => {
   const isBrowser = typeof window !== "undefined";
   const [scroll, setScroll] = useState(0);
+  const isModalOpen = !!useSearchParams()!.get("modal");
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
@@ -23,7 +25,11 @@ const ScrollUpButton = () => {
   return (
     <>
       {scroll > 700 && (
-        <button className={style.scrollUpButton} onClick={scrollToTop}>
+        <button
+          disabled={isModalOpen}
+          className={style.scrollUpButton}
+          onClick={scrollToTop}
+        >
           <IoIosArrowDown className={style.scrollUpButtonIcon} />
         </button>
       )}

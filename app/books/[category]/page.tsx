@@ -3,6 +3,9 @@ import Modal from "@/components/Modal/Modal";
 import { getBooksByCategory } from "@/services/getBooks";
 import { ICard } from "@/types/types";
 import style from "../../../components/Categories/CategoriesAll.module.scss";
+import Section from "@/app/containers/Section";
+import PageTitle from "@/components/Categories/PageTitle";
+import CardsList from "@/components/Card/CardsList";
 
 interface ICategory {
   params: {
@@ -21,15 +24,15 @@ export const revalidate = 60;
 
 const Category = async ({ params: { category } }: ICategory) => {
   const books = await getBooksByCategory(category);
-
-  const bookCardMarkup = books?.map(
-    ({ _id, title, author, book_image }: ICard) => (
-      <Card
-        key={_id}
-        cardsInfo={{ _id, author, title, book_image, category }}
-      />
-    )
-  );
+  // console.log("CATEGORY", category);
+  // const bookCardMarkup = books?.map(
+  //   ({ _id, title, author, book_image }: ICard) => (
+  //     <Card
+  //       key={_id}
+  //       cardsInfo={{ _id, author, title, book_image, category }}
+  //     />
+  //   )
+  // );
   const categoryName = category.replace(/%20/g, " ").split(" ");
   const firstPartCategoryName =
     categoryName.slice(0, categoryName.length - 1).join(" ") + " ";
@@ -38,13 +41,13 @@ const Category = async ({ params: { category } }: ICategory) => {
   return (
     <>
       <Modal />
-      <section>
-        <h2 className={style.pageTitle}>
-          {firstPartCategoryName}
-          <span>{lastPartCategoryName}</span>
-        </h2>
-        <ul className={style.cardsList}>{bookCardMarkup}</ul>
-      </section>
+      <Section>
+        <PageTitle
+          firstPartName={firstPartCategoryName}
+          lastPartName={lastPartCategoryName}
+        />
+        <CardsList books={books} category={category} />
+      </Section>
     </>
   );
 };
