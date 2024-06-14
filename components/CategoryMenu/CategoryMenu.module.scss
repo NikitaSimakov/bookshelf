@@ -1,0 +1,12 @@
+.categoriesWrapper {
+  max-height: 228px;
+  min-width: 335px;
+  overflow-y: scroll;
+  @media screen and (min-width: 768px) {
+    min-width: 337px;
+    max-height: 472px;
+  }
+  @media screen and (min-width: 1440px) {
+    min-width: 328px;
+  }
+}

@@ -10,6 +10,8 @@ interface CardProps {
 export const Card = ({
   cardsInfo: { _id, book_image, title, author, category },
 }: CardProps) => {
+  console.log(book_image);
+  const bookImageSrc = book_image || "/default/default-book-image.jpg";
   return (
     <li key={_id} className={style.card}>
       <div className={style.cardImageWrapper}>
@@ -17,7 +19,7 @@ export const Card = ({
           className={style.cardImage}
           height={485}
           width={335}
-          src={book_image}
+          src={bookImageSrc}
           alt={title}
         />
         <div className={style.cardPopup}>

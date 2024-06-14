@@ -1,7 +1,7 @@
 import Link from "next/link";
-import style from "./CategoriesAll.module.scss";
 import { IBooks, ICard } from "../../types/types";
 import Card from "../Card/Card";
+import style from "./CategoriesAll.module.scss";
 
 type AllCategoriesProps = {
   topBooks: IBooks[];
