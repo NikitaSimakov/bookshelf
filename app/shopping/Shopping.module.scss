@@ -59,13 +59,13 @@
     display: block;
     width: 100px;
     height: 142px;
+    object-fit: cover;
 
     border-radius: 8px;
     @media screen and (min-width: 768px) {
       width: 116px;
       height: 165px;
     }
-    // outline: 1px solid black;
   }
   &TextBox {
     display: flex;
@@ -223,11 +223,4 @@
     width: 16px;
     height: 16px;
   }
-  // &:first-child > img {
-  //   width: 48px;
-  //   @media screen and (max-width: 767px) {
-  //     width: 32px;
-  //     height: 11px;
-  //   }
-  // }
 }

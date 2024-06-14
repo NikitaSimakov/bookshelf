@@ -59,7 +59,6 @@ export const ShoppingPaginationBlock = ({
       </li>
       <li
         onClick={() => {
-          // if (lastPage - page < 3) return;
           setPage(lastPage);
         }}
       >
