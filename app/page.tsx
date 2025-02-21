@@ -1,4 +1,3 @@
-// import { useRouter } from "next/navigation";
 import { authConfig } from "@/config/auth";
 import { Metadata } from "next";
 import { getServerSession } from "next-auth";
